@@ -1,11 +1,180 @@
+<!-- Estructura basica de toda pagina web -->
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <p>Año 2023, Introducción</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagina de Ejemplo</title>
+  </head>
+  <body>
+    <h1 id="Publicidad">Pagina Web</h1>
+    <!-- Etiqueta de Boton -->
+    <button>Click Aqui</button>
+
+    <!-- Etiqueta de Link
+    <a> Significa ancla
+    tiene como propiedades:
+    href: sirve para indicar la ubicacion del recurso
+    target: sirve para indicar donde se abre el recurso
+  -->
+    <p>
+      Etiqueta de Enlace para ir a google sin target, es decir, me redirecciona
+      a google en la misma pagina
+    </p>
+    <a href="https://www.google.com">
+      <button>Ir a Google (sin target)</button>
+    </a>
+
+    <p>
+      Etiqueta de Enlace para ir a inicio con target, es decir, me redirecciona
+      a inicio en otra pestaña
+    </p>
+    <a href="./index.html" target="_blank">
+      <button>Ir a Inicio (Con target)</button>
+    </a>
+
+    <p>Enlace por defecto</p>
+    <a href="./index.html"> Ir a inicio </a>
+
+    <!-- Lista Desordenada 
+    <ul> Significa lista desordenada
+    tiene como propiedad:
+    type: sirve para indicar el estilo de la lista
+    Contiene elementos <li></li> (List Item)
+  -->
+
+    <h2>Lista de Compras</h2>
+    <ul type="disc">
+      <li>
+        <!-- Nota: Puedo colocar enlaces dentro de listas o de cualquier etiqueta HTML -->
+        <a
+          href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRDSxSg9Aud0x-Kd9elJg_WavzKpLvUySaoA&s"
+        >
+          Pan
+        </a>
+      </li>
+      <li>Queso</li>
+      <li>Jamon</li>
+    </ul>
+
+    <!-- Listas Ordenadas
+    <ol> Significa lista ordenada
+    tiene como propiedad:
+    type: sirve para indicar el estilo de la lista
+    Contiene elementos <li></li> (List Item)
+  -->
+
+    <h2>Lista de Numeros</h2>
+    <ol>
+      <li>Uno</li>
+      <li>Dos</li>
+      <li>Tres</li>
+    </ol>
+
+    <!-- Divisores
+    <div> Significa divisor
+    Contiene elementos cualquiera, se usa para ordenar
+  -->
+
+    <div style="background-color: aquamarine;">
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi error
+        maxime doloremque vitae porro commodi iusto quaerat. Rerum beatae odit
+        sequi exercitationem animi id, vero consequuntur, porro perferendis,
+        numquam dolores.
+      </p>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi error
+        maxime doloremque vitae porro commodi iusto quaerat. Rerum beatae odit
+        sequi exercitationem animi id, vero consequuntur, porro perferendis,
+        numquam dolores.
+      </p>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi error
+        maxime doloremque vitae porro commodi iusto quaerat. Rerum beatae odit
+        sequi exercitationem animi id, vero consequuntur, porro perferendis,
+        numquam dolores.
+      </p>
+    </div>
+
+    <!-- Etiquetas semanticas iguales al <div>
+    <header> Significa cabecera
+    !<main> Significa contenido principal
+    !<footer> Significa pie de pagina
+    <section> Significa seccion
+    <article> Significa articulo
+    !<nav> Significa navegacion
+    <aside> Significa barra lateral
+  -->
+
+    <!-- Formularios
+    <form> Significa formulario
+    Contiene elementos <input>
+    <input> Significa campo de entrada
+    tiene como propiedades:
+    type: sirve para indicar el tipo de campo de entrada
+     tipos de type:
+      text
+      password
+      email
+      number
+      date
+      radio
+      checkbox
+  -->
+
+    <h2>Formulario de Registro</h2>
+    <form action="./index.html">
+      <p>Nombre:</p>
+      <input type="text" name="name" />
+      <p>Contraseña:</p>
+      <input type="password" name="password" />
+      <p>Correo:</p>
+      <input type="email" name="email" />
+      <p>Edad:</p>
+      <input type="number" name="age" />
+      <p>Fecha de Nacimiento:</p>
+      <input type="date" name="birthday" />
+      <input type="submit" value="Enviar" />
+    </form>
+
+    <!-- Etiqueta para crear espacios <br> -->
+
+    <div>
+      <h3>Titular</h3>
+      <br />
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      <br />
+      <br />
+      <br />
+      <a href="./index.html" target="_blank">Inicio</a>
+    </div>
+
+    <!-- Etiqueta para crear lineas horizontales <hr> -->
+
+    <div>
+      <h3>Titular</h3>
+      <hr />
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      <hr />
+      <hr />
+      <hr />
+      <a href="./index.html" target="_blank">Inicio</a>
+    </div>
+
+    <!-- Etiqueta iframe -->
+
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/ajPvRViK3Hw?si=po0n4xqrDxRrj2Iu"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+
+
+  </body>
 </html>
