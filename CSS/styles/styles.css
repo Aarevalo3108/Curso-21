@@ -1,0 +1,96 @@
+/*
+
+Comentarios en CSS.
+
+selector Global: *
+selector de etiqueta o generico: <etiqueta> (0,0,1)
+selector de ID: #id (1,0,0)
+selector de Clase: .clase (0,1,0)
+
+
+Ejemplo de selector global: Prioridad mas baja (0)
+*{
+  box-sizing: border-box;
+}
+*/
+
+
+/* Selector de etiqueta o generico */
+/* p {
+  color: purple;
+} */
+
+/* html{
+  font-family: 'Courier New', Courier, monospace;
+}
+
+body{
+  background-color: black;
+  color: white;
+} */
+
+
+
+/* Selector de ID, es el mas especifico */
+#parrafo-1 {
+  color: red;
+}
+
+/* Selector de Clase, es mas especifico que el selector de etiqueta */
+.item {
+  background-color: blue;
+  color: white;
+}
+
+/* Multiples Clases */
+.primero {
+  color: red;
+}
+
+
+/* 
+
+. para clases
+# para id
+
+*/
+
+
+/* Combinaciones de selectores */
+div nav h3 {
+  color: coral;
+}
+
+.contenedor #navegacion .encapsulado {
+  color: green;
+}
+
+.lista li {
+  font-size: large;
+}
+
+
+/* Propiedades Mas importantes */
+.main{
+  /* Enfocado al elemento */
+  width: 500px; /* Ancho */
+  height: 500px; /* Alto */
+  background-color: darkslategray; /* Color de fondo */
+  padding: 24px 12px; /* Espacio alrededor del contenido */
+  /* padding-left: 12px;
+  padding-top: 24px;
+  padding-right: 24px;
+  padding-bottom: 24px; */
+  margin: 24px; /* Espacio alrededor del elemento */
+  margin-left: 24px;
+  margin-top: 24px;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  border:;
+  
+  /* Enfocado al texto de elementos internos */
+  color: #548dd6; /* Color de letras */
+  font-size: 32px; /* Tamaño de letra */
+  text-align: center; /* Alineacion de texto */
+}
+
