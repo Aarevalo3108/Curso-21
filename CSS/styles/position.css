@@ -96,7 +96,7 @@ body{
   border: 2px solid rgb(101, 169, 0);
   top: 0.5rem;
   right: 0.5rem;
-  transition: all 0.1s ease;
+  transition: all 0.1s ease; /* animaciones */
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
 

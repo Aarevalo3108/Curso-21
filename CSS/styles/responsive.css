@@ -66,10 +66,16 @@ ul{
 }
 
 .grid {
-  width: 100vw;
   height: 1200px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+
+  /*  alinear */
+
+  /* justify-items: center;
+  align-content: center; */
 }
 
 .elemento-grid {
@@ -77,14 +83,62 @@ ul{
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  background-color: rgb(71, 143, 0);
+  border-radius: 16px;
 }
+
+.importante{
+  /* grid-column: span 3 / span 3; /* ocupa 2 columnas *//* ocupa todas las columnas */
+} */
 
 
 /* Selector de hijo directo */
 .elemento-grid > img {
   width: 100%;
+  min-width: 50px;
+  max-width: 200px;
+}
+
+/* Opcion Flex
+
+
+.contenedor-grid{
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.contenedor-grid > div{
+  background-color: rgb(0, 143, 119);
   min-width: 100px;
-  max-width: 400px;
+  max-width: 600px;
+  min-height: 100px;
+  max-height: 400px;
+} */
+
+
+/* Opcion Grid */
+
+.contenedor-grid{
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  /* justify-items: center; */
+  gap: 1rem;
+  align-content: center;
+}
+
+.contenedor-grid > div{
+  background-color: rgb(0, 143, 119);
+  padding: 2rem;
+}
+
+.contenedor-grid > div > img{
+  width: 100%;
+  min-width: 50px;
+  max-width: 150px;
 }
 
 
@@ -123,6 +177,10 @@ ul{
 
   .grid{
     grid-template-columns: repeat(4, 1fr);  
+  }
+
+  .contenedor-grid{
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
