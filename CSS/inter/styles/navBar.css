@@ -1,0 +1,88 @@
+
+/* Referente a la barra de navegacion */
+
+.nav{
+  position: sticky;
+  top: 0;
+}
+
+/*-- Inicio: Parte superior de mi barra de navegacion --*/
+
+.nav-logo{
+  background-color: var(--c1);
+  padding: 0.8rem 2rem;
+
+  display: flex;
+  align-items: center;
+
+  gap: 1rem;
+}
+
+.paginas{
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0;
+  list-style-type: none;
+  font-size: x-small;
+  background-color: var(--c2);
+  gap: 0.5rem;
+}
+
+.paginas li a:hover{
+  color: var(--c1);
+}
+
+/*-- Final: Parte superior de mi barra de navegacion  --*/
+
+/*-- Inicio: Menu Desplegable --*/
+
+.menu-desplegable, .menu-desplegable-superior,
+.menu-desplegable-inferior{
+  font-size: x-small;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-desplegable{
+  padding: 1.2rem 0;
+  height: 60vh;
+  width: 60%;
+  justify-content: space-between;
+}
+
+.menu-desplegable-superior{
+  padding: 0 1rem;
+  text-align: center;
+  gap: 1rem;
+}
+
+.menu-desplegable-inferior{
+  align-items: center;
+  padding: 0 1rem;
+  text-align: center;
+  gap: 2rem;
+  font-weight: 600;
+}
+
+.azul{
+  color: var(--c1);
+}
+
+.boton-inter{
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 2rem;
+  background-color: var(--c1);
+  color: white;
+}
+
+
+
+
+
+
+/*-- Final: Menu Desplegable --*/
