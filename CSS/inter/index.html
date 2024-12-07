@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" as="font" href="./src/fonts/5f8bef30161d4c4f-s.p.woff2" crossorigin="" type="font/woff2">
+  <link rel="preload" as="font" href="./src/fonts/918f874f91ac4b3e-s.p.ttf" crossorigin="" type="font/ttf">
   <link rel="stylesheet" href="./styles/general.css">
   <link rel="stylesheet" href="./styles/navBar.css">
+  <link rel="stylesheet" href="./styles/main.css">
   <title>Inter</title>
 </head>
 <body>
@@ -12,13 +15,30 @@
   <nav class="nav">
     <!-- PARTE SUPERIOR -->
     <div class="nav-logo">
-      <a class="boton-lineas" href="">
-        <img width="24px" height="16px" src="./src/lines.svg" alt="lineas">
-      </a>
+      <div class="interaccion">
+        <div class="menu-desplegable">
+          <div class="menu-desplegable-superior">
+            <img width="16px" height="16px" src="./src/x.svg" alt="x">
+            <a href="">HOGAR</a>
+            <a href="">EMPRESAS</a>
+          </div>
+          <div class="menu-desplegable-inferior">
+            <a class="azul" href="">ATENCION AL CLIENTE</a>
+            <a target="_blank" href="https://mi.inter.com.ve/?src=homeweb" class="boton-inter">
+              <img width="16px" height="16px" src="./src/user.svg" alt="user">
+              <span>MI INTER</span>
+            </a>
+          </div>
+        </div>
+        <a class="boton-lineas" href="">
+          <img width="24px" height="16px" src="./src/lines.svg" alt="lineas">
+        </a>
+      </div>
       <a href="">
         <img width="72px" src="./src/logo.svg" alt="logo">
       </a>
     </div>
+    
 
     
     
@@ -46,22 +66,44 @@
       </li>
     </ul>
   </nav>
-  <div class="menu-desplegable">
-    <div class="menu-desplegable-superior">
-      <img width="16px" height="16px" src="./src/x.svg" alt="x">
-      <a href="">HOGAR</a>
-      <a href="">EMPRESAS</a>
-    </div>
-
-    <div class="menu-desplegable-inferior">
-      <a class="azul" href="">ATENCION AL CLIENTE</a>  
-      <a target="_blank" href="https://mi.inter.com.ve/?src=homeweb" class="boton-inter">
-        <img width="16px" height="16px" src="./src/user.svg" alt="user">
-        <span>MI INTER</span>
-      </a>
-    </div>
-  </div>
   <!-- CONTENIDO PRINCIPAL -->
-  <main style="height: 200vh; background-color: #4cc2c2;"></main>
+  <main style="min-height: 200vh;">
+    <div class="slider">
+      <img width="100%" src="./src/slider.png" alt="">
+      <img width="100%" src="./src/slider2.png" alt=""> 
+    </div>
+    <div class="tarjetas">
+      <section class="tarjeta">
+        <div class="titulo">
+          <div>
+            <img class="tv" width="24px" src="./src/tv.svg" alt="">
+          </div>
+          <h1>Solicita Internet + television</h1>
+        </div>
+        <p>Conéctate a la fibra óptica de Inter que te ofrece estabilidad y velocidad para que navegues sin interrupciones de manera ilimitada.</p>
+        <ul class="lista">
+          <li class="item">
+            <img width="16px" src="./src/check.svg" alt="check.svg">
+            <span>Planes de Internet simétricos de hasta 1 GbPS</span>
+          </li>
+          <hr>
+          <li class="item">
+            <img width="16px" src="./src/check.svg" alt="check.svg">
+            <span>Más de 140 canales, incluyendo 50 en HD</span>
+          </li>
+          <hr>
+          <li class="item">
+            <img width="16px" src="./src/check.svg" alt="check.svg">
+            <span>Servicio independiente de la red eléctrica comercial</span>
+          </li>
+          <div class="botones">
+            <button>Ver Disponibilidad</button>
+            <button>Ver planes</button>
+          </div>
+        </ul>
+      </section>
+      <section class="tarjeta"></section>
+    </div>
+</main>
 </body>
 </html>

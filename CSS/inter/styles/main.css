@@ -1,0 +1,98 @@
+/* Todo lo referente a mi contenido principal */
+
+
+/* Slider */
+.slider{
+  display: flex;
+  overflow: hidden;
+}
+
+.slider > img {
+  animation-name: slider;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes slider {
+  0%{
+    transform: translateX(0);
+  }
+  50%{
+    transform: translateX(-100%);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+
+/* Tarjetas */
+
+.titulo{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tarjetas{
+  background-color: var(--c2);
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tarjeta{
+  background-color: var(--c1);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.tarjeta > p{
+  font-size: 0.7rem;
+}
+
+.titulo{
+  font-size: 0.8rem;
+}
+
+.titulo > div{
+  background-color: white;
+  padding: 0.8rem;
+  border-radius: 100%;
+  height: 24px;
+  width: 24px;
+}
+
+.item{
+  font-size: 0.8rem;
+}
+
+.lista{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.botones{
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.botones > button{
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: none;
+}
+
+.botones > button:last-child{
+  background-color: var(--c2);
+}
+

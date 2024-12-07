@@ -4,6 +4,7 @@
 .nav{
   position: sticky;
   top: 0;
+  z-index: 10;
 }
 
 /*-- Inicio: Parte superior de mi barra de navegacion --*/
@@ -44,10 +45,17 @@
 }
 
 .menu-desplegable{
+  transition: all 200ms ease;
+  transform: translateX(-100%);
+  position: absolute;
+  top: 0;
+  left: 0;
   padding: 1.2rem 0;
   height: 60vh;
   width: 60%;
   justify-content: space-between;
+  background-color: white;
+  border-radius: 1rem;
 }
 
 .menu-desplegable-superior{
@@ -78,6 +86,10 @@
   border-radius: 2rem;
   background-color: var(--c1);
   color: white;
+}
+
+.interaccion:hover .menu-desplegable{
+  transform: translateX(0);
 }
 
 
