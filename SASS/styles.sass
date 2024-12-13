@@ -1,0 +1,50 @@
+
+/*SASS es un lenguaje sin puntos y comas y sin llaves, pero es muy sensible con la identacion*/  
+
+// Comentario que no se va a compilar y no se va a ver en CSS
+
+
+// Variables
+
+$color-principal: #b86a6a
+$color-secundario: #325834
+
+body
+  background: black
+
+h1
+  color: white
+  text-align: center
+
+
+div
+  color: $color-principal
+  background-color: $color-secundario
+
+// Anidacion
+.seccion
+  background-color: $color-principal
+  color: $color-secundario
+  display: flex
+  flex-direction: column
+  padding: 1rem
+  gap: 1rem
+  h2
+    font-size: 2rem
+    border: 1px solid black
+    border-radius: 1rem
+  p
+    font-size: 1.5rem
+    border: 1px solid black
+    border-radius: 1rem
+  ul
+    list-style: none
+    padding: 1rem
+    li
+      font-size: 1.2rem
+      border: 1px solid black
+  button
+    background-color: $color-secundario
+    color: $color-principal
+    padding: 1rem
+    border-radius: 1rem

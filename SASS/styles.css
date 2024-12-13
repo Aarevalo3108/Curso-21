@@ -1,0 +1,47 @@
+/*SASS es un lenguaje sin puntos y comas y sin llaves, pero es muy sensible con la identacion*/  
+body {
+  background: black;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+div {
+  color: #b86a6a;
+  background-color: #325834;
+}
+
+.seccion {
+  background-color: #b86a6a;
+  color: #325834;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+}
+.seccion h2 {
+  font-size: 2rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+}
+.seccion p {
+  font-size: 1.5rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+}
+.seccion ul {
+  list-style: none;
+  padding: 1rem;
+}
+.seccion ul li {
+  font-size: 1.2rem;
+  border: 1px solid black;
+}
+.seccion button {
+  background-color: #325834;
+  color: #b86a6a;
+  padding: 1rem;
+  border-radius: 1rem;
+}/*# sourceMappingURL=styles.css.map */
