@@ -1,4 +1,17 @@
 /*SASS es un lenguaje sin puntos y comas y sin llaves, pero es muy sensible con la identacion*/  
+nav {
+  background-color: #96b86a;
+  padding: 1rem;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  list-style: none;
+  gap: 1rem;
+}
+
 body {
   background: black;
 }
@@ -9,6 +22,10 @@ h1 {
 }
 
 div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
   color: #b86a6a;
   background-color: #325834;
 }
@@ -17,6 +34,8 @@ div {
   background-color: #b86a6a;
   color: #325834;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   padding: 1rem;
   gap: 1rem;
@@ -37,11 +56,11 @@ div {
 }
 .seccion ul li {
   font-size: 1.2rem;
-  border: 1px solid black;
+  border: 10px solid black;
 }
 .seccion button {
-  background-color: #325834;
-  color: #b86a6a;
+  background-color: #2a93a6;
+  color: #325834;
   padding: 1rem;
   border-radius: 1rem;
 }/*# sourceMappingURL=styles.css.map */

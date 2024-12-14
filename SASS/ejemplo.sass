@@ -1,0 +1,65 @@
+@mixin lista($tipo: row, $espaciado: 1rem)
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: $tipo // argumento
+  list-style: none
+  gap: $espaciado
+  @media only screen and (min-width: 768px)
+    flex-direction: row
+    gap: 2rem
+    background-color: yellow
+
+@mixin boton
+  width: 100%
+  padding: 2rem
+  @media only screen and (min-width: 768px)
+    width: initial
+    padding: 0.5rem
+
+button
+  @include boton
+
+
+.fila
+  background-color: violet
+  padding: 2rem
+  border-radius: 1rem 
+  transition: all 0.5s ease
+  // & es para llamar al selector padre
+  &__texto
+    color: blue
+  &__lista
+    @include lista
+    background-color: red
+    &__item
+      padding: 1rem
+      background-color: #2a93a6
+      border-radius: 1rem
+  &:hover
+    background-color: #3f4a31
+    padding: auto
+
+// @extend: copiamos las propiedades de un selector
+
+.noticias
+  @extend .fila
+  &__titulo
+    @extend .fila__texto
+  &__lista
+    @extend .fila__lista
+    &__item
+      @extend .fila__lista__item
+
+
+
+.columna
+  ul
+    @include lista(column, 2rem)
+    background-color: green
+
+.seccion
+  ul
+    @include lista
+    background-color: blue
+

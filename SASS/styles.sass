@@ -2,12 +2,50 @@
 /*SASS es un lenguaje sin puntos y comas y sin llaves, pero es muy sensible con la identacion*/  
 
 // Comentario que no se va a compilar y no se va a ver en CSS
-
+// https://kenney.nl/
 
 // Variables
 
 $color-principal: #b86a6a
 $color-secundario: #325834
+$color-terciario: #2a93a6
+$color-cuarto: #96b86a
+
+// Mixins (plantillas)
+// Los mixins se llaman con @mixin y deben tener un nombre
+
+@mixin base
+  background-color: $color-terciario
+  color: $color-secundario
+  padding: 1rem
+  border-radius: 1rem
+
+@mixin alinear($direction)
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: $direction
+
+@mixin colores($border, $padding)
+  color: $color-principal
+  background-color: $color-secundario
+  border: 1px solid $border
+  outline: 1px solid $color-cuarto
+  padding: $padding
+
+.container
+  @include colores($color-principal, 1rem)
+
+nav
+  @include colores($color-cuarto, 2rem)
+  
+  background-color: $color-cuarto
+  padding: 1rem
+  ul
+    // @include para llamar a un mixin
+    @include alinear
+    list-style: none
+    gap: 1rem
 
 body
   background: black
@@ -18,6 +56,7 @@ h1
 
 
 div
+  @include alinear(row)
   color: $color-principal
   background-color: $color-secundario
 
@@ -25,8 +64,7 @@ div
 .seccion
   background-color: $color-principal
   color: $color-secundario
-  display: flex
-  flex-direction: column
+  @include alinear(column)
   padding: 1rem
   gap: 1rem
   h2
@@ -42,9 +80,9 @@ div
     padding: 1rem
     li
       font-size: 1.2rem
-      border: 1px solid black
+      border: 10px solid black
   button
-    background-color: $color-secundario
-    color: $color-principal
-    padding: 1rem
-    border-radius: 1rem
+    @include base
+
+
+
