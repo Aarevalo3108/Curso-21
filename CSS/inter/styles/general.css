@@ -3,6 +3,7 @@
 :root{
   --c1: #0055b8;
   --c2: #ffb600;
+  --c3: #002248;
 }
 
 *{
@@ -22,6 +23,10 @@ a{
 
 body{
   position: relative;
+}
+
+ul, ol{
+  list-style: none;
 }
 
 

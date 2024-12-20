@@ -7,6 +7,15 @@
   z-index: 10;
 }
 
+.nav-opciones{
+  /* display: none; */
+  display: flex;
+  color: white;
+  gap: 0.5rem;
+  align-items: center;
+
+}
+
 /*-- Inicio: Parte superior de mi barra de navegacion --*/
 
 .nav-logo{
@@ -90,6 +99,13 @@
 
 .interaccion:hover .menu-desplegable{
   transform: translateX(0);
+}
+
+
+@media only screen and (min-width: 1025px) {
+  .interaccion{
+    display: none;
+  }
 }
 
 

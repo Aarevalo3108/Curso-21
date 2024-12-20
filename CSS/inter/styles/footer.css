@@ -1,0 +1,49 @@
+/* Estilos para el footer */
+
+.footer{
+  background-color: var(--c1);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.2rem;
+  font-size: 0.6rem;
+  padding: 1rem 0;
+}
+
+.footer__lista{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer__lista__item > a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.redes__iconos{
+  display: flex;
+  gap: 0.5rem;
+}
+
+.redes{
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+
+.icono{
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.redes__soporte{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
