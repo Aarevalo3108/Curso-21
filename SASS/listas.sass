@@ -1,0 +1,52 @@
+// Listas en SASS
+// Existen varias formas de declarar listas:
+
+$numeros: 1 2 3 4 5 6 7 8 9 10
+
+$letras: a, b, c, d, e
+
+$frutas: (mango pera uva fresa)
+
+// Recomendadas
+$marcas: (apple, samsung, xiaomi, huawei)
+
+// $colores: (red 1px, blue 2px, green 3px, yellow 4px)
+
+$colores: (red, blue, green, yellow)
+$colores-esp: (rojo red, azul blue, verde green, amarillo yellow)
+
+// Manejo de listas
+// nth($lista, $indice)
+
+h1
+  background-color: nth($colores, 2)
+
+// length($lista)
+
+// Manejo con Bucles
+// @each $item in $lista
+
+@each $color in $colores
+  .#{"" + $color}
+    background-color: $color
+    padding: 1rem
+    border-radius: 1rem
+    margin: 1rem
+
+@each $color in $colores-esp
+  .#{nth($color, 1)}
+    background-color: nth($color, 2)
+    padding: 1rem
+    border-radius: 1rem
+    margin: 1rem
+
+// Ciclo for
+// @for $i from "desde" through "hasta"
+
+@for $i from 1 through 10
+  .item-#{$i}
+    background-color: nth($colores, ($i % 4) + 1)
+    padding: 2rem
+    border-radius: 1rem
+    margin: 1rem
+

@@ -1,0 +1,19 @@
+@use "components/variables" // Importamos el archivo variables.sass
+@use "components/mixins" as * // Importamos todos los mixins de mixins.sass
+@use "components/variables2" as var // Importamos el archivo variables2.sass
+
+body
+  // debemos colocar el nombre del archivo antes del nombre de la variable
+  background-color: variables.$color-principal 
+  padding: 1rem
+
+
+h1
+  @include base // Llamamos al mixin base sin definir un nombre primero
+  border: 1px solid variables.$color-secundario
+
+p
+  background-color: black
+  color: var.$color-principal
+  padding: var.$padding
+  border: 2px solid green

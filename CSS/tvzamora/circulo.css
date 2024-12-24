@@ -3,15 +3,12 @@
   height: 130px;
   gap: 1rem;
 }
-
 .selector{
   text-align: end;
 }
-
 p{
   width: 150px;
 }
-
 .medio{
   display: flex;
   flex-direction: column;
@@ -19,13 +16,11 @@ p{
   width: 16px;
   height: 100%;
 }
-
 .linea{
   height: 100%;
   width: 2px;
   background-color: rgb(134, 134, 134);
 }
-
 .circulo{
   width: 16px;
   height: 16px;

@@ -1,0 +1,19 @@
+body {
+  background-color: #b86a6a;
+  padding: 1rem;
+}
+
+h1 {
+  background-color: #2a93a6;
+  color: #325834;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 1px solid #325834;
+}
+
+p {
+  background-color: black;
+  color: white;
+  padding: 1.2rem;
+  border: 2px solid green;
+}/*# sourceMappingURL=uso_modulos.css.map */

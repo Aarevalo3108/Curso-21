@@ -11,6 +11,10 @@ $color-secundario: #325834
 $color-terciario: #2a93a6
 $color-cuarto: #96b86a
 
+// Lista de colores
+
+$colores: (#b86a6a, #325834, #2a93a6, #96b86a)
+
 // Mixins (plantillas)
 // Los mixins se llaman con @mixin y deben tener un nombre
 
@@ -20,18 +24,41 @@ $color-cuarto: #96b86a
   padding: 1rem
   border-radius: 1rem
 
-@mixin alinear($direction)
+@mixin alinear($direction, $gap: 1rem)
   display: flex
   justify-content: center
   align-items: center
   flex-direction: $direction
+  // Condicionales en SASS: Comparador (==)(!=)(<,>,<=,>=), if, else if, else. 
+  // Operadores: +, -, *, /
+  @if $gap > 2
+    gap: 2rem
+  @if $direction == row
+    gap: 1rem + $gap
+  @else if $direction == column
+    gap: 2rem / $gap
+  @else 
+    gap: 0 + $gap
 
-@mixin colores($border, $padding)
+
+@mixin colores($border, $padding) // #{2.5}rem✅ #{2.5rem}rem❌
   color: $color-principal
   background-color: $color-secundario
   border: 1px solid $border
   outline: 1px solid $color-cuarto
-  padding: $padding
+
+  // Declaracion literal
+  padding: #{$padding}rem
+  
+
+  @if $padding > 2
+    border-radius: 1rem
+  @else if $padding <= 1
+    border-radius: 0.5rem
+  @else if $padding == 0.5
+    border-radius: 0.2rem
+  @else
+    border-radius: 0.1rem
 
 .container
   @include colores($color-principal, 1rem)
