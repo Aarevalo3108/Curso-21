@@ -8,15 +8,15 @@
   <!-- <link rel="stylesheet" href="./styles.css"> -->
 
   <!-- Animate.css -->
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   
 
   <!-- AOS - Animate On Scroll -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">\
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <title>Tailwind</title>
 </head>
-<body class="pb-32">
+<body class="pb-32 min-h-screen">
   <nav class="animate__animated animate__bounceInRight">
     <!-- Clases de Tailwind mas usadas:
 
@@ -30,7 +30,7 @@
                       elementos (& es el padre)
     
     -->
-    <ul class="flex rounded-b-xl bg-blue-500 justify-around p-4 [&>li]:font-bold [&>li]:text-white [&>li]:bg-blue-600 [&>li]:rounded-xl [&>li]:p-2">
+    <ul class="flex rounded-b-xl bg-blue-500 justify-around p-4 child:font-bold [&>li]:text-white [&>li]:bg-blue-600 [&>li]:rounded-xl [&>li]:p-2">
       <!-- <li class="font-bold p-2 text-white bg-blue-600 rounded-xl">Inicio</li> -->
       <li>Inicio</li>
       <li>Servicios</li>
@@ -43,8 +43,8 @@
     <h2 class="bg-cyan-600 px-4 py-8">Estilos en Secciones</h2>
     <img class="animate__animated animate__backInRight w-[300px] h-[200px] object-cover" src="https://picsum.photos/200/300" alt="">
     <p class="px-4 py-8 text-justify animate__animated animate__rotateInDownRight">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id temporibus, omnis veniam et deserunt
-       aliquam molestiae obcaecati rerum distinctio aspernatur quaerat ab delectus ut animi impedit at nisi 
-       quae quidem officiis.</p>
+      aliquam molestiae obcaecati rerum distinctio aspernatur quaerat ab delectus ut animi impedit at nisi 
+      quae quidem officiis.</p>
     
     <section class="p-4 flex flex-col gap-24 [&>div:nth-child(2n)]:items-end">
       <div data-aos="fade-right" class="p-4 rounded-lg flex flex-col">

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind CDN: Recomendado para desarrollo -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Unicamente se necesita esa etiqueta para trabajar con tailwind -->
+  <title>Responsive (TLF)</title>
+</head>
+<body class="min-h-screen bg-cyan-600">
+  <nav>
+  </nav>
+  <main class="bg-green-600 flex flex-col sm:flex-row sm:gap-4 md:justify-center items-center p-8">
+    <div class="p-4 flex flex-col gap-8">
+      <h1 class="text-4xl">Responsive (TLF)</h1>
+      <p class="text-2xl">Resize the browser window to see the effect.</p>
+    </div>
+    <img width="200px" height="300px" src="https://picsum.photos/200/300" alt="">
+  </main>
+  <footer>
+    <ul class="grid sm:grid grid-cols-1 sm:grid-cols-2 justify-items-center gap-4 p-4 [&>li]:text-xl">
+      <li class="bg-emerald-600 hover:bg-emerald-700 hover:scale-[1.05] transition px-4 py-2 rounded-xl">Redes</li>
+      <li class="bg-emerald-600 hover:bg-emerald-700 hover:scale-[1.05] transition px-4 py-2 rounded-xl">Facebook</li>
+      <li class="bg-emerald-600 hover:bg-emerald-700 hover:scale-[1.05] transition px-4 py-2 rounded-xl">Instagram</li>
+      <li class="bg-emerald-600 hover:bg-emerald-700 hover:scale-[1.05] transition px-4 py-2 rounded-xl">Twitter</li>
+    </ul>
+  </footer>
+</body>
+</html>
