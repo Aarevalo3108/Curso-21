@@ -67,11 +67,11 @@ console.log(" 10 == 10", igual);
 let diferente = 1 != true; // false
 console.log(" 1 != true", diferente);
 let estrictoIgual = 10 === "10"; // false
-console.log(" 10 === '10'", estrictoIgual);
+console.log(" 10 === '10'", estrictoIgual); // el valor y el tipo de dato deben ser iguales
 
 // Operadores aritmeticos
-let suma = 10 + 5; // 15
-console.log("10 + 5", suma);
+// let suma = 10 + 5; // 15
+// console.log("10 + 5", suma);
 let resta = 10 - 5; // 5
 console.log("10 - 5", resta);
 let multiplicacion = 10 * 5; // 50
@@ -151,8 +151,8 @@ switch (Number(dia)) {
   default:
     alert("Dia no valido");
     break;
-}
-*/
+}*/
+
 
 // Ejercicios:
 
@@ -199,6 +199,50 @@ console.log("once: ", once);
 // Ejercicios para practicar "en casa"
 
 const doce = !( true && (!true === !( !(16 === (4*2) + 8))) ) !== (false);
+console.log("doce: ", doce); // true
+
 const trece = !(((!(!(10 / 5 == "2") === false) != false) === ((5 * 5) <= (100 / 4))) && (!((1 + 1) !== (10 / 5)) !== (true)));
+console.log("trece: ", trece); // true
+
+// nota: diferenciar es equivalente a igualar e invertir 
+// false !== true // true
+// false == !true // true
+
+// Funciones
+
+function suma() {
+  let a = 10;
+  let b = 25;
+  let suma = a + b;
+
+  console.log("La suma de 10 + 25 = ", suma);
+  return suma
+}
+
+let resultado = suma();
+
+
+// Ejemplo con DOM
+
+function sumaDOM(){
+  let a = Number(prompt("Escribe un numero: "));
+  let b = Number(prompt("Escribe otro numero: "));
+
+  let suma = a + b;
+  console.log("La suma de ", a," + ", b," = ", suma);
+
+  //alert("La suma de ", a," + ", b," = ", suma); // solo se ve "La suma de"
+  
+  // Incrustar variables en un texto:
+  let mensaje = "La suma de " + a + " + " + b + " = " + suma;
+
+  // Uso de los ``
+  mensaje = `La suma de ${a} + ${b} = ${suma}`;
+
+  alert(mensaje);
+}
+
+
+
 
 
