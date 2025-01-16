@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./src/ejercicio.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Document</title>
+  <style>
+    .oculto{
+      display: none;
+    }
+  </style>
+</head>
+<body class="flex flex-col items-center gap-8">
+  <h1 class="text-4xl">Ejercicios</h1>
+  <button onclick="calculadora()" class="px-6 py-2 bg-blue-600 rounded-2xl">Calculadora (con prompt)</button>
+  <button class="px-6 py-2 bg-orange-600 rounded-2xl" onclick="mostrar()">Ver calculadora</button>
+  <div class="flex hidden flex-col items-center bg-slate-600 p-8 rounded-2xl border-4 text-white gap-8 text-2xl" id="calculadora">
+    <label for="">
+      Ingrese la operacion que quiere realizar
+    </label>
+    <input class="text-black" type="text" name="operacion" id="operacion">
+    <p>
+      Resultado: <span id="resultado"></span> 
+    </p>
+    <button onclick="calculadoraV1()" class="px-4 py-2 bg-emerald-600 rounded-xl">Resolver</button>
+  </div>
+  <script src="./ejercicios.js"></script>
+</body>
+</html>

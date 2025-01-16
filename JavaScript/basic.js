@@ -243,6 +243,31 @@ function sumaDOM(){
 }
 
 
+// Funciones con parametros 
+
+function restaFuncion(a, b) {
+  let resta = a - b;
+  console.log("La resta de ", a," - ", b," = ", resta);
+  return resta
+}
+//  Funcion ordinaria se ejecuta asi -> funcion();
+//  Funcion con parametros se ejecuta asi -> funcion(parametro1, parametro2);
+let resultadoResta = restaFuncion(10, 5);
+
+console.log(resultadoResta)
+
+//  Funcion con parametros por defecto
+
+function restaFuncionDefecto(a = 20, b = 5.5) {
+  let resta = a - b;
+  console.log("La resta de ", a," - ", b," = ", resta);
+  return resta
+}
+let resultadoRestaDefecto = restaFuncionDefecto();
+
+console.log(resultadoRestaDefecto)
+
+
 
 
 
