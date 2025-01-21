@@ -267,6 +267,41 @@ let resultadoRestaDefecto = restaFuncionDefecto();
 
 console.log(resultadoRestaDefecto)
 
+// Funciones recursivas, son funciones que se llaman a si mismas
+
+// Ejemplo: Factorial = n!
+function factorial(n) {
+  if (n === 0) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
+  }
+}
+console.log(factorial(8000));
+
+// Ejemplo Infinito
+function infinito(a) {
+  console.log("Infinito", a);
+  a++;
+  return infinito(a);
+}
+infinito(1);
+
+// Scope (alcance de las variables)
+
+let scopeX = 10;
+
+function scope() {
+  let scopeX = 20;
+  console.log(scopeX, "Desde la funcion");
+  return scopeX + " Desde el return";
+}
+
+console.log(scopeX, "Desde el scope");
+console.log(scope());
+
+// Metodos de cadenas de texto
+
 
 
 
