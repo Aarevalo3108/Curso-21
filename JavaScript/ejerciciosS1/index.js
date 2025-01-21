@@ -38,6 +38,11 @@ function limpiar(){
   pantalla.value = "";
 }
 
+function borrar(){
+  let pantalla = document.getElementById("display");
+  pantalla.value = pantalla.value.slice(0,-1);
+}
+
 function resolver(){
   let pantalla = document.getElementById("display");
   pantalla.value = eval(pantalla.value);

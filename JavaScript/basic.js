@@ -277,7 +277,7 @@ function factorial(n) {
     return n * factorial(n - 1);
   }
 }
-console.log(factorial(8000));
+console.log(factorial(50));
 
 // Ejemplo Infinito
 function infinito(a) {
@@ -288,19 +288,101 @@ function infinito(a) {
 infinito(1);
 
 // Scope (alcance de las variables)
-
 let scopeX = 10;
-
 function scope() {
   let scopeX = 20;
   console.log(scopeX, "Desde la funcion");
   return scopeX + " Desde el return";
 }
 
+function hola(){
+  return 10;
+}
+console.log(hola());
+
 console.log(scopeX, "Desde el scope");
 console.log(scope());
 
+// function limitar(texto){
+//   if(texto.length >= 30){
+//     console.log("Texto es muy largo.");
+//   }else{
+//     return texto;
+//   }
+// }
+// limitar();
+
 // Metodos de cadenas de texto
+
+let cadenaTexto = "Esto es una cadena de texto"; // (2, -5)
+console.log(cadenaTexto);
+
+// saber la longitud de la cadenas. Puede servir para fijar límites
+console.log(cadenaTexto.length);
+
+
+// Transformar todo a mayusculas
+console.log(cadenaTexto.toUpperCase())
+
+// Transformar todo a minusculas
+console.log(cadenaTexto.toLowerCase())
+
+// Obtener un caracter de la cadena
+console.log(cadenaTexto.charAt(6)) // mediante metodo
+console.log(cadenaTexto[6]) // mediante selector directo
+
+// Verificar si una cadena contiene un texto
+console.log(cadenaTexto.includes("cadena")); // true o false
+
+// Reemplazar texto de una cadena
+console.log(cadenaTexto.replace("texto","metodo"));
+
+cadenaTexto.replace("texto","cadena"); // sin modificacion a la cadena original
+// cadenaTexto = cadenaTexto.replace("texto","cadena"); // modificamos la cadena original
+console.log(cadenaTexto);
+
+// Obtenemos un substring (cortamos una cadena en 2)
+console.log(cadenaTexto.slice(2,-5)) 
+
+// -1 (valores negativos) indica valores de derecha a izquierda de la cadena
+// 0 (valores positivos) indica valores de izquierda a derecha de la cadena
+
+/*
+
+  Ejercicios:
+
+  Ejercicio 1:
+  Crear una funcion que reciba como parametro una cadena de texto
+  e imprima la cadena de texto en mayusculas.
+  Ejemplo: "Bienvenido" -> "BIENVENIDO".
+  
+  Ejercicio 2:
+  Crear una funcion que reciba como parametro una cadena de texto
+  e imprima la cadena de texto en minusculas.
+  Ejemplo: "BienVenIdO" -> "bienvenido".
+
+  Ejercicio 3:
+  Crear una funcion que reciba un texto e imprima la longitud de la cadena de texto.
+  Si la longitud es mayor que 5, que se imprima la cadena recortada.
+  Ejemplo: "Angel Arevalo" -> "Angel"
+
+  Ejercicio 4:
+  Crear una funcion que reciba un texto e imprima la primera letra y la ultima.
+  Ejemplo: "Cadena de texto" -> "C <-> o"
+
+  Ejercicio 5:
+  Crear una funcion que reciba un texto e imprima la palabra "durazno" si se incluye en el texto
+  Ejemplo: "Quiero comer durazno" -> "durazno" ó "no hay durazno" (si no esta la palabra durazno)
+
+  Nota: Debes crear un boton en HTML para ejecutar cada ejercicio
+  (5 botones), cada boton debe permitirle al usuario ingresar un texto y mostrarle al usuario
+  el resultado del ejercicio correspondiente.
+
+*/
+
+
+
+
 
 
 
