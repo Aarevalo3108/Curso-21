@@ -266,7 +266,19 @@ console.log("Sub arreglo: ",subArreglo);
 //  permiten repetir un bloque de codigo las veces que sean necesarias
 
 // For
-// i = i + 1; o i += 1; o i++;
+// El ciclo For tiene una condicion en tres partes:
+//  - Inicializacion
+//  - Condicion
+//  - Actualizacion
+// Cada ciclo que ocurre se llama iteracion y 
+// cada iteracion comprueba la condicion para saber si debe terminar o no
+
+// Actualizacion: Se incrementa o decrementa la variable de control
+// i++;
+// i = i + 1;
+// i += 1;
+// Son lo mismo
+
 console.log("Inicio del ciclo for");
 for (let i = 0; i < 10; i++) {
   console.log(i);
