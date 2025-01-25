@@ -1,15 +1,21 @@
 // Funciones
 
-function suma() {
+function sumar() {
   let a = 10;
   let b = 25;
   let suma = a + b;
+  // total = resultadoResta + a + suma;
+
+  // console.log(total);
 
   console.log("La suma de 10 + 25 = ", suma);
   return suma
 }
+console.log(a,b);
 
-let resultado = suma();
+let resultado = sumar();
+
+console.log(resultado);
 
 
 // Ejemplo con DOM
@@ -38,11 +44,12 @@ function sumaDOM(){
 function restaFuncion(a, b) {
   let resta = a - b;
   console.log("La resta de ", a," - ", b," = ", resta);
+  console.log(sumar())
   return resta
 }
 //  Funcion ordinaria se ejecuta asi -> funcion();
 //  Funcion con parametros se ejecuta asi -> funcion(parametro1, parametro2);
-let resultadoResta = restaFuncion(10, 5);
+var resultadoResta = restaFuncion("diez", 5);
 
 console.log(resultadoResta)
 
@@ -284,6 +291,8 @@ for (let i = 0; i < 10; i++) {
   console.log(i);
 }console.log("Fin del ciclo for");
 
+
+// Como mostrar los elementos de un arreglo
 let lista = ["Correr","Dormir", "Comer", "Estudiar", "Jugar"];
 
 for (let i = 0; i < lista.length; i++) {

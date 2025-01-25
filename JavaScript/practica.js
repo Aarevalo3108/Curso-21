@@ -67,6 +67,30 @@ ejercicio8(ejercicio8Arreglo);
   ejemplo: ["fresa","uva","manzana"] -> "manzana" y "uva"
 */
 
+function ejercicio9(parametro){
+  let mayor = parametro[0];
+  let menor = parametro[0];
+  for (let i = 1; i < parametro.length; i++) {
+    if(mayor.length < parametro[i].length){
+      mayor = parametro[i];
+    }
+    if(menor.length > parametro[i].length){
+      menor = parametro[i];
+    }
+  }
+  console.log(mayor, "y", menor);
+}
+
+let lista = ["fresa","uva","manzana"];
+
+// console.log(lista[0]) // fresa
+// console.log(lista[1]) // uva
+// console.log(lista[2]) // manzana
+
+console.log("Arreglo original: ", lista);
+
+ejercicio9(lista);
+
 /*
   Ejercicios 10:
   Crear una funcion que reciba como parametro un arreglo de numeros
@@ -74,22 +98,20 @@ ejercicio8(ejercicio8Arreglo);
   si hay dos numeros iguales, que se imprima cualquiera junto con su posicion
   ejemplo: [1,2,3,4,5] -> [5, 4] || [20,45,22,45] -> [45, 1]
 */
-
 /*
   Ejercicios 11:
   Crear una funcion que reciba como parametro un arreglo de numeros
   e imprima en consola el numero menor del arreglo, 
   si hay dos numeros iguales, que se imprima cualquiera junto con su posicion
-  ejemplo: [1,2,3,4,5] -> [1, 0] || [25,48,22,22] -> [22, 2]
+  ejemplo: [1,2,3,4,5] -> [1, 0] || [25,48,22,22] -> [22, [2,3]] o [22, 2]
 */
-
 /*
   Ejercicios 12:
   Crear una funcion que reciba como parametro un arreglo de arreglos
   e imprima en consola todos los elementos del arreglo de arreglos
   ejemplo: [[1,2,3],[4,5,6],[7,8,9]] -> [1,2,3,4,5,6,7,8,9]
+  Pista: usar un for anidado (for dentro de for)
 */
-
 /*
   Ejercicios 13:
   Crear una funcion que reciba como parametro un arreglo de frutas
