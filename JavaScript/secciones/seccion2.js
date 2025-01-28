@@ -350,13 +350,391 @@ do{
 let j = 0;
 console.log(j);
 j++;
-while(j < 0){
+while(j < 20){
   console.log(j);
   j++;
 }
 
-// For in: para trabajar con arreglos
-// For of: para trabajar con objetos
 
+// Objetos: Que son?
+// son colecciones de clase clave-valor
+// Ejemplo:
+
+const carro = {
+  marca: "Toyota",
+  modelo: "Corolla",
+  fabricacion: {
+    fecha: 2020,
+    pais: "Japon"
+  },
+  color: "Negro",
+  precio: 2000,
+  estado: true,
+  conducir: function(){
+    console.log("Conduciendo");
+  }
+};
+console.log(carro); // En HTML se ve como [object Object]
+console.log(carro.marca); // llamar a una propiedad
+console.log(carro["marca"]);
+console.log(carro.precio); // 2000
+console.log(carro["precio"]);
+carro.conducir(); // Llamar a un metodo
+
+console.log(carro.fabricacion.pais);
+
+// Modificar una propiedad
+
+carro.color = "Azul";
+console.log(carro);
+
+carro.persona = "Angel Arevalo";
+console.log(carro);
+
+let clave = 'tipo'; // dos puertas, cuatro puertas
+// forma incorrecta: 
+// carro.clave = "Cuatro puertas"; <- se guardaria dentro del objeto la clave "clave"
+// forma correcta: 
+carro[clave] = "Cuatro puertas";// <- se guardaria dentro del objeto la clave "tipo"
+
+console.log(carro);
+
+// Elimar una propiedad
+delete carro.fabricacion.pais;
+
+delete carro; // Nota: delete solo elimina la propiedad y no el objeto
+
+console.log(carro);
+
+// For in: para trabajar con objetos
+// For of: para trabajar con arrays
+const persona = {
+  nombre: "Luis",
+  apellido: "Perez",
+  edad: 20,
+  pais: "Mexico",
+  ciudad: "Monterrey",
+}
+
+for (const propiedad in persona) {
+  console.log(propiedad, persona[propiedad]);
+}
+
+// Ejemplo:
+let texto = "";
+for (const propiedad in persona) {
+  texto += persona[propiedad] + " ";
+}
+console.log(texto);
+
+const array = ["Manzana", "Pera", "Sandia", "Durazno", "Tamarindo"];
+console.log(array);
+
+for (let fruta of array) {
+  fruta = `${fruta} es una fruta`;
+  // No modificamos la lista, 
+  // solo la recorremos con una variable auxiliar
+  // en este caso "fruta"
+}
+
+console.log(array);
+
+// Ejercicio:
+// Mostrar el inventario del mercado 
+const inventario_mercado = [
+  {
+    categoria: "Frutas",
+    subcategorias: [
+      {
+        tipo: "Manzanas",
+        marcas: [
+          {
+            nombre: "Apple Farms",
+            origen: "EE.UU.",
+            productos: [
+              {
+                nombre: "Manzana Gala",
+                precio: 1.2,
+                cantidad: 30,
+                proveedor: {
+                  nombre: "Fresh Import",
+                  ubicacion: "California, EE.UU.",
+                  contacto: "import_fresh@example.com"
+                },
+                condiciones: {
+                  temperatura: "4°C",
+                  humedad: "90%"
+                },
+                fechaIngreso: "2023-09-10",
+                vidaUtilDias: 20,
+                certificaciones: ["Orgánico", "Libre de pesticidas"],
+                embalaje: "Caja de cartón con separadores"
+              },
+              {
+                nombre: "Manzana Fuji",
+                precio: 1.5,
+                cantidad: 25,
+                proveedor: {
+                  nombre: "Fresh Import",
+                  ubicacion: "California, EE.UU.",
+                  contacto: "import_fresh@example.com"
+                },
+                condiciones: {
+                  temperatura: "4°C",
+                  humedad: "85%"
+                },
+                fechaIngreso: "2023-09-15",
+                vidaUtilDias: 25,
+                certificaciones: ["Orgánico", "GMO-Free"],
+                embalaje: "Empaque biodegradable"
+              }
+            ]
+          },
+          {
+            nombre: "EcoFruit",
+            origen: "Chile",
+            productos: [
+              {
+                nombre: "Manzana Verde",
+                precio: 1.3,
+                cantidad: 40,
+                proveedor: {
+                  nombre: "Green Supply",
+                  ubicacion: "Santiago, Chile",
+                  contacto: "greensupply@example.cl"
+                },
+                condiciones: {
+                  temperatura: "3°C",
+                  humedad: "80%"
+                },
+                fechaIngreso: "2023-09-08",
+                vidaUtilDias: 30,
+                certificaciones: ["Fair Trade", "Orgánico"],
+                embalaje: "Bolsa de papel reciclado"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    categoria: "Carnes",
+    subcategorias: [
+      {
+        tipo: "Aves",
+        marcas: [
+          {
+            nombre: "FreeRange Poultry",
+            origen: "Brasil",
+            productos: [
+              {
+                nombre: "Pollo Entero",
+                precio: 4.5,
+                cantidad: 50,
+                proveedor: {
+                  nombre: "Granjas Unidas",
+                  ubicacion: "São Paulo, Brasil",
+                  contacto: "granjas_unidas@example.com"
+                },
+                condiciones: {
+                  temperatura: "-2°C",
+                  embalaje: "Empaque al vacío",
+                  fechaCaducidad: "2023-10-05"
+                },
+                fechaIngreso: "2023-09-10",
+                vidaUtilDias: 45,
+                pesoPromedio: "1.2 kg",
+                certificaciones: ["Libre de hormonas", "Bienestar animal"]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        tipo: "Res",
+        marcas: [
+          {
+            nombre: "Bovino Premium",
+            origen: "Argentina",
+            productos: [
+              {
+                nombre: "Corte de Res Angus",
+                precio: 10.0,
+                cantidad: 20,
+                proveedor: {
+                  nombre: "Exportadora Bovino",
+                  ubicacion: "Buenos Aires, Argentina",
+                  contacto: "exportadora_bovino@example.com"
+                },
+                condiciones: {
+                  temperatura: "-3°C",
+                  embalaje: "Empaque al vacío"
+                },
+                fechaIngreso: "2023-09-12",
+                vidaUtilDias: 30,
+                pesoPromedio: "0.8 kg",
+                certificaciones: ["GMO-Free", "Alta calidad"]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    categoria: "Lácteos",
+    subcategorias: [
+      {
+        tipo: "Leche",
+        marcas: [
+          {
+            nombre: "Lácteos del Valle",
+            origen: "México",
+            productos: [
+              {
+                nombre: "Leche Entera",
+                precio: 2.0,
+                cantidad: 100,
+                proveedor: {
+                  nombre: "Distribuidora Valle",
+                  ubicacion: "Ciudad de México, México",
+                  contacto: "distribuidora_valle@example.com"
+                },
+                condiciones: {
+                  temperatura: "4°C",
+                  embalaje: "Envase de cartón reciclable"
+                },
+                fechaIngreso: "2023-09-18",
+                vidaUtilDias: 10,
+                tipo: "Entera",
+                certificaciones: ["Certificado orgánico"]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        tipo: "Quesos",
+        marcas: [
+          {
+            nombre: "Quesería Tradicional",
+            origen: "Francia",
+            productos: [
+              {
+                nombre: "Queso Brie",
+                precio: 8.5,
+                cantidad: 15,
+                proveedor: {
+                  nombre: "Quesería Tradicional",
+                  ubicacion: "París, Francia",
+                  contacto: "queso_france@example.fr"
+                },
+                condiciones: {
+                  temperatura: "5°C",
+                  humedad: "75%"
+                },
+                fechaIngreso: "2023-09-20",
+                vidaUtilDias: 60,
+                origenLeche: "Vaca",
+                certificaciones: ["Appellation d'origine contrôlée (AOC)"],
+                embalaje: "Caja de madera"
+              },
+              {
+                nombre: "Queso Roquefort",
+                precio: 12.0,
+                cantidad: 10,
+                proveedor: {
+                  nombre: "Quesería Tradicional",
+                  ubicacion: "París, Francia",
+                  contacto: "queso_france@example.fr"
+                },
+                condiciones: {
+                  temperatura: "6°C",
+                  humedad: "80%"
+                },
+                fechaIngreso: "2023-09-21",
+                vidaUtilDias: 90,
+                origenLeche: "Oveja",
+                certificaciones: ["Appellation d'origine contrôlée (AOC)"],
+                embalaje: "Empaque de cera ecológica"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+];
+
+// Ejercicio 2:
+// Mostrar todos los elementos del objeto a continuacion:
+let personas = [
+  { // [0]
+    nombre: "Juan",
+    apellido: "Perez",
+    edad: 25, // personas[0].edad
+    hobbies: ["correr","saltar","dormir"],
+    direccion: {
+      calle: "calle 1",
+      numero: 1,
+      barrio: "Barrio 1"
+    },
+    saludar: function(){
+      console.log("Hola desde un objeto");
+    }
+  },
+  { // [1]
+    nombre: "Maria",
+    apellido: "Salome",
+    edad: 25,
+    hobbies: ["correr","saltar","dormir"], // personas[1].hobbies[1]
+    direccion: {
+      calle: "calle 1",
+      numero: 1,
+      barrio: "Barrio 1" // personas[1].direccion.barrio o personas[1]['direccion']['barrio']
+    },
+    saludar: function(){
+      console.log("Hola desde un objeto");
+    }
+  },
+  { //[2]
+    nombre: "Manuel",
+    apellido: "Hernandez",
+    edad: 25,
+    hobbies: ["correr","saltar","dormir"],
+    direccion: {
+      calle: "calle 1",
+      numero: 1,
+      barrio: "Barrio 1"
+    },
+    saludar: function(){ // personas[2].saludar();
+      console.log("Hola desde un objeto");
+    }
+  }
+]
+
+// Mostrar cada propiedad y cada elemento de cada arreglo y objeto del objeto personas
+// Se puede utilizar for of y for in o se pueden utilizar ciclos for normales
+// let Texto
+
+
+console.log(personas[0]);
+console.log(personas[1]);
+console.log(personas[2]);
+console.log(personas[0].hobbies);
+console.log(personas[0].hobbies[0]);
+console.log(personas[0].hobbies[1]);
+console.log(personas[0].hobbies[2]);
+console.log(personas[1].hobbies[0]);
+console.log(personas[1].hobbies[1]);
+console.log(personas[1].hobbies[2]);
+console.log(personas[2].hobbies[0]);
+console.log(personas[2].hobbies[1]);
+console.log(personas[2].hobbies[2]);
+
+console.log(`${personas[0]} dice ${personas[0].saludar()}`);
+console.log(`${personas[1]} dice ${personas[1].saludar()}`);
+console.log(`${personas[2]} dice ${personas[2].saludar()}`);
 
 
