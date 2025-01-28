@@ -316,6 +316,47 @@ if(bandera == false){
 // Acomodar ese codigo para que, si en la lista se encuentra la palabra dormir y 
 // no es el ultimo elemento, imprima "Estoy durmiendo", sin el mensaje de "no estoy durmiendo"
 
+// While: Un For mas sencillo
+// let i = 0; // Coondicion inicial
+while(i < 20){ // Condicion de repeticion
+  console.log(i);
+  i++; // Actualizacion 
+}
+
+
+// Con interrupcion
+// let i = 0;
+let flag = false;
+while(true){
+  console.log(i);
+  i++;
+  if(i == 10){
+    flag = true;
+    break;
+  }
+}
+
+
+// Do-while: Un For mas sencillo
+let i = 0; // Coondicion inicial
+do{
+  console.log("Hola Mundo ",i);
+  i++; // Actualizacion 
+}while(i < 20);
+
+
+
+// Equivalencia del do while con el While:
+let j = 0;
+console.log(j);
+j++;
+while(j < 0){
+  console.log(j);
+  j++;
+}
+
+// For in: para trabajar con arreglos
+// For of: para trabajar con objetos
 
 
 
