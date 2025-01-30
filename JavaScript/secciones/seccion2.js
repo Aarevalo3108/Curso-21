@@ -74,7 +74,7 @@ function factorial(n) {
     return n * factorial(n - 1);
   }
 }
-console.log(factorial(50));
+console.log(factorial(500));
 
 // Ejemplo Infinito
 function infinito(a) {
@@ -669,7 +669,7 @@ const inventario_mercado = [
 
 // Ejercicio 2:
 // Mostrar todos los elementos del objeto a continuacion:
-let personas = [
+const personas = [
   { // [0]
     nombre: "Juan",
     apellido: "Perez",
@@ -681,7 +681,7 @@ let personas = [
       barrio: "Barrio 1"
     },
     saludar: function(){
-      console.log("Hola desde un objeto");
+      console.log(`Te saluda ${this.nombre} desde un objeto`);
     }
   },
   { // [1]
@@ -695,7 +695,7 @@ let personas = [
       barrio: "Barrio 1" // personas[1].direccion.barrio o personas[1]['direccion']['barrio']
     },
     saludar: function(){
-      console.log("Hola desde un objeto");
+      console.log(`Te saluda ${this.nombre} desde un objeto`);
     }
   },
   { //[2]
@@ -703,14 +703,16 @@ let personas = [
     apellido: "Hernandez",
     edad: 25,
     hobbies: ["correr","saltar","dormir"],
+    ropa: ["camisa","pantalon"],
     direccion: {
       calle: "calle 1",
       numero: 1,
       barrio: "Barrio 1"
     },
-    saludar: function(){ // personas[2].saludar();
-      console.log("Hola desde un objeto");
+    saludar: function(){
+      console.log(`Te saluda ${this.nombre} desde un objeto`);
     }
+    // elemento: undefined
   }
 ]
 
@@ -719,9 +721,45 @@ let personas = [
 // let Texto
 
 
-console.log(personas[0]);
-console.log(personas[1]);
-console.log(personas[2]);
+// console.log(personas[0]);
+// console.log(personas[1]);
+// console.log(personas[2]);
+
+
+for( const persona of personas){
+  for(const propiedad in persona){
+    // if(propiedad == "hobbies"){
+    //   let hobbies = persona["hobbies"];
+    //   for(const hobby of hobbies){
+    //     console.log(hobby);
+    //   }
+    // }
+    if(Array.isArray(persona[propiedad])){
+      let array = persona[propiedad];
+      for(const elemento of array){
+        console.log(elemento);
+      }
+    }
+    else if (propiedad == "direccion"){
+      let direccion = persona["direccion"];
+      // for(const caracteristica in persona[propiedad]){
+      //   console.log(persona[propiedad][caracteristica]);
+      // }
+      for(const caracteristica in direccion){
+        console.log(direccion[caracteristica]);
+      }
+    }
+    else if (propiedad == "saludar"){
+      persona.saludar();
+    }else{
+      console.log(persona[propiedad]);
+    }
+  }
+  console.log(" ");
+}
+
+
+
 console.log(personas[0].hobbies);
 console.log(personas[0].hobbies[0]);
 console.log(personas[0].hobbies[1]);
@@ -736,5 +774,74 @@ console.log(personas[2].hobbies[2]);
 console.log(`${personas[0]} dice ${personas[0].saludar()}`);
 console.log(`${personas[1]} dice ${personas[1].saludar()}`);
 console.log(`${personas[2]} dice ${personas[2].saludar()}`);
+
+
+// Saber si una propiedad es un arreglo
+console.log(Array.isArray(persona[propiedad])); // true si es un arreglo
+
+// Saber si una propiedad es un objeto
+console.log(typeof persona[propiedad] === "object"); // true si es un objeto
+
+// Funciones constructoras
+
+function Persona(nombre, apellido, edad){
+  this.nombre = nombre;
+  this.apellido = apellido;
+  this.edad = edad;
+  this.saludar = function(){
+    console.log(`Te saluda ${this.nombre} desde una funcion constructora`);
+  }
+}
+
+let persona1 = new Persona("Juan", "Perez", 25);
+let persona2 = new Persona("Maria", "Salome", 25);
+let persona3 = new Persona("Manuel", "Hernandez", 25);
+
+let personas_ordenadas = [persona1, persona2, persona3];
+
+console.log(personas_ordenadas);
+
+
+// Clases: funciones constructoras, tiene que ver mucho con programacion orientada a objetos
+
+class Producto{
+  constructor(valor1, valor2){
+    this.nombre = valor1;
+    this.precio = valor2;
+    this.calculoIVA = function(){
+      return this.precio * 0.16;
+    }
+  }
+}
+
+let producto1 = new Producto("Camisa", 1000);
+let producto2 = new Producto("Pantalon", 2000);
+let producto3 = new Producto("Zapatos", 3000);
+
+let productos = [producto1, producto2, producto3];
+
+// console.log(producto1, producto2, producto3);
+
+for(const producto of productos){
+  console.log(`El IVA de ${producto.nombre} es ${producto.calculoIVA()}`);
+}
+
+
+/*
+  Ejercicios de Seccion 2:
+
+  1. Crea el juego de tres en raya. (Tablero de tres en raya, Utilizar arrays y ciclos for)
+  
+  Opcional:
+  2. Crea un To Do List. (To Do List, Utilizar objetos y ciclos for)
+  
+  Nota: Para ambos ejercicios debes tener en cuenta crear una pagina web para visualizarlos (HTML,CSS)
+  La pagina debe publicarse en Github Pages.
+
+  Para estos ejercicios es necesario trabajar con los metodos 
+  .appendChild() y .removeChild() (To Do List) de DOM.
+
+  Fecha de entrega: 03/02/2025
+*/
 
 

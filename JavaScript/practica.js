@@ -247,12 +247,15 @@ console.log("Resltado: ",resultado13);
 /*
   Ejericio 14:
   Crea una funcion que realice el factorial de un numero utilizando ciclos
-
 */
+
 /*
   Ejericio 15:
   Crea una funcion que realice la sucecion de fibonacci utilizando ciclos
 */
+
+
+
 /*
   Ejericio 16:
   Crea las funciones agregar, eliminar, buscar, actualizar de un arreglo.
