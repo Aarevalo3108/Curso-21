@@ -33,8 +33,8 @@ console.log(cuadrados);
 
 const lista = ["Correr",-2 ,"Comer",3.2 ,"Dormir",45 ,"Estudiar","Jugar",5];
 
-const lista1 = [];
-const lista2 = [];
+const lista1 = []; // Arreglo para numeros
+const lista2 = []; // Arreglo para strings
 
 function ordenamiento(elemento){
   if(typeof elemento === "number"){
@@ -55,10 +55,12 @@ console.log("Lista 2: ", lista2);
 
 // Arrow functions -> Otra forma de declarar funciones
 
+// Tradicional
 function sumarTradicional(a, b){
   return a + b;
 }
 
+// de tipo Arrow
 const sumarFlecha = (a, b) => a + b;
 
 console.log(sumarFlecha(10,20));
@@ -182,3 +184,89 @@ div.style.backgroundColor = "red";
 document.body.appendChild(div);
 
 
+/*
+
+Selectores en JavaScript
+Con el objeto document podemos seleccionar elementos del DOM, como por ejemplo:
+
+- ID: document.getElementById("id")
+- Clase: document.getElementsByClassName("clase")
+- Etiqueta: document.getElementsByTagName("etiqueta")
+- Selector: document.querySelector("selector")
+- Selector All: document.querySelectorAll("selector")
+
+*/
+
+
+// Seleccionar por el nombre de la etiqueta
+
+const contenedor = document.querySelector("div");
+
+console.log(contenedor);
+
+contenedor.innerText = "Nuevo texto";
+
+contenedor.innerHTML = "<a href='#'>Enlace</a>";
+
+
+// Selector por ID <- mas comun
+const seccion = document.getElementById("seccion");
+
+console.log(seccion);
+
+for (let i=0; i <100; i++){
+  const parrafo = document.createElement("p");
+  parrafo.innerText = `Parrafo ${i}`;
+  seccion.appendChild(parrafo);
+}
+
+// Selector de etiquetas completo
+
+const listaLi = document.querySelectorAll("li");
+
+
+listaLi[2].classList.value = "item-3 generico rojo fondo-verde azul";
+// listaLi[2].classList.push("rojo"); <- No funciona debido a que no es un arreglo como tal
+
+console.log(listaLi);
+
+
+// Selector por clase
+
+const item = document.getElementsByClassName("item");
+
+console.log(item); // va a seleccionar todos los elementos que tengan la clase item
+
+// Seleccionar un ID por querySelector
+
+const item3 = document.querySelector("#item-3");
+
+console.log(item3);
+
+
+// For each -> Permite iterar sobre un array
+
+listaLi.forEach((li, index) => {
+  li.innerText = `Nuevo texto ${index*2}`; 
+});
+
+
+
+// Ejercicios para pracvticar ES6, DOM, selectores
+// Todo por JS
+// 1. En un documento HTML crear una lista de 10 elementos <li> con los numeros del 1 al 10
+// 2. Crea un boton y modifica su texto y sus estilos 
+
+// 3. Aplicale estilos a esa lista del ejercicio 1 de elementos
+// Seria tipo: <li class="Rojo"></li>, <li class="Verde"></li>
+// 4. Crea una lista de imagenes (maximo 10) con esta estructura:
+// {
+//   "id": n1,
+//   "title": "n1",
+//   "url": "https://picsum.photos/200"
+// }, ...
+// cada elemento img seria: <img id="id" src="url" alt="title">
+
+const imgObject = document.querySelectorAll("img");
+
+console.log(imgObject); // Spoiler de las imagenes
