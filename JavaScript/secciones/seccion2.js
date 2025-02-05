@@ -754,6 +754,8 @@ for( const persona of personas){
     }else{
       console.log(persona[propiedad]);
     }
+    // Operador ternario
+    (Array.isArray(persona[propiedad])) ? console.log(persona[propiedad]) : propiedad === "direccion" ? console.log(persona["direccion"]) : console.log(persona[propiedad]);
   }
   console.log(" ");
 }
