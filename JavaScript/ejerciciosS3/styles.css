@@ -1,0 +1,50 @@
+:root{
+  --c1: #0055b8;
+  --c2: #ffb600;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  background-color: rgb(44, 57, 22);
+}
+
+ul{
+  list-style: disc;
+  margin-left: 2rem;
+}
+
+.boton{
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 2rem;
+  background-color: var(--c1);
+  color: white;
+}
+
+.li:nth-child(2n){
+  background-color: #5eba3c;
+}
+
+.li{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  color: var(--c2);
+  background-color: var(--c1);
+  color: white;
+}

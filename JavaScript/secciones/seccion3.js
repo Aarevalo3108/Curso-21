@@ -183,7 +183,6 @@ div.style.backgroundColor = "red";
 // Agregar elementos al DOM
 document.body.appendChild(div);
 
-
 /*
 
 Selectores en JavaScript
@@ -225,6 +224,7 @@ for (let i=0; i <100; i++){
 const listaLi = document.querySelectorAll("li");
 
 
+// Modificar las clases de un elemento
 listaLi[2].classList.value = "item-3 generico rojo fondo-verde azul";
 // listaLi[2].classList.push("rojo"); <- No funciona debido a que no es un arreglo como tal
 
@@ -249,6 +249,23 @@ console.log(item3);
 listaLi.forEach((li, index) => {
   li.innerText = `Nuevo texto ${index*2}`; 
 });
+
+/*
+  Funciones asociada a document
+  document.getElementById("id") -> Selector de elementos por id
+  document.getElementsByClassName("class") -> Selector de elementos por clase (Devuelve un arreglo)
+  document.getElementsByTagName("etiqueta") -> Selector de elementos por etiqueta (Devuelve un arreglo)
+  document.querySelector("selector") -> Selector de elementos por cualquier selector de css
+  document.querySelectorAll("selector") -> Selector de elementos por cualquier selector de css (Devuelve un arreglo)
+  document.createElement("etiqueta") -> Crea un elemento html
+  document.removeChild(elemento) -> Elimina un elemento html
+  document.appendChild(elemento) -> Agrega un elemento html como hijo
+  document.replaceChild(elemento, elemento) -> Reemplaza un elemento por otro
+  
+  document.getElementById("id").innerHTML -> Obtiene el contenido html de un elemento
+  document.getElementById("id").value = "valor" -> Asigna un valor a un elemento
+*/
+
 
 
 
