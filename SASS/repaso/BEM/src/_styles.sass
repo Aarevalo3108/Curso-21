@@ -1,0 +1,74 @@
+// Extend: diseñado para reutilizar estilos
+
+@mixin center()
+  display: flex
+  justify-content: center
+  align-items: center
+
+@mixin size($width, $height)
+  width: $width
+  height: $height
+  @include center
+  
+// Estandares BEM. Una forma de esscritura de clases en CSS
+// Selector de padre: &
+.banner // banner
+  background-color: #170a58
+  color: white
+  padding: 1rem
+  &__nav // banner__nav
+    @extend .banner // repetimos los estilos de banner. Nota: recomendado mejor trabajar con mixins
+    display: flex
+    gap: 1rem
+    justify-content: space-between
+    &__item // banner__nav__item
+      background-color: white
+      color: #170a58
+      padding: 0.5rem
+      border-radius: 1rem
+      &__logo // banner__nav__item__logo
+        display: flex
+        align-items: center
+        gap: 1rem
+        border-radius: 1rem
+
+
+.main
+  display: flex
+  flex-direction: column
+  gap: 1rem
+  padding: 1rem
+  &__section
+    display: flex
+    flex-direction: column
+    gap: 1rem
+    padding: 1rem
+    &--red
+      background-color: red
+
+
+.footer
+  background-color: #170a58
+  color: white
+  padding: 1rem
+  &__links
+    display: flex
+    flex-direction: column
+    gap: 1rem
+    justify-content: space-between
+    &__item
+      background-color: white
+      color: #170a58
+      padding: 0.5rem
+      border-radius: 1rem
+      @include size(100px, 100px)
+
+$sizes: 40px, 50px, 80px
+
+@each $size in $sizes
+  .icon-#{$size}
+    font-size: $size
+    height: $size
+    width: $size
+    $size: 2rem
+

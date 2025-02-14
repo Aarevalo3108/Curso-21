@@ -1,5 +1,20 @@
 /*SASS es un lenguaje sin puntos y comas y sin llaves, pero es muy sensible con la identacion*/  
+.container {
+  color: #b86a6a;
+  background-color: #325834;
+  border: 1px solid #b86a6a;
+  outline: 1px solid #96b86a;
+  padding: 1remrem;
+  border-radius: 0.5rem;
+}
+
 nav {
+  color: #b86a6a;
+  background-color: #325834;
+  border: 1px solid #96b86a;
+  outline: 1px solid #96b86a;
+  padding: 2remrem;
+  border-radius: 0.1rem;
   background-color: #96b86a;
   padding: 1rem;
 }
@@ -7,7 +22,8 @@ nav ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
+  flex-direction: "row";
+  gap: 2rem;
   list-style: none;
   gap: 1rem;
 }
@@ -26,6 +42,7 @@ div {
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  gap: 2rem;
   color: #b86a6a;
   background-color: #325834;
 }
@@ -37,6 +54,7 @@ div {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 2;
   padding: 1rem;
   gap: 1rem;
 }

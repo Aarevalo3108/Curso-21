@@ -1,0 +1,79 @@
+.banner, .banner__nav {
+  background-color: #170a58;
+  color: white;
+  padding: 1rem;
+}
+.banner__nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+.banner__nav__item {
+  background-color: white;
+  color: #170a58;
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+.banner__nav__item__logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 1rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+.main__section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+.main__section--red {
+  background-color: red;
+}
+
+.footer {
+  background-color: #170a58;
+  color: white;
+  padding: 1rem;
+}
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-between;
+}
+.footer__links__item {
+  background-color: white;
+  color: #170a58;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-40px {
+  font-size: 40px;
+  height: 40px;
+  width: 40px;
+}
+
+.icon-50px {
+  font-size: 50px;
+  height: 50px;
+  width: 50px;
+}
+
+.icon-80px {
+  font-size: 80px;
+  height: 80px;
+  width: 80px;
+}/*# sourceMappingURL=styles.css.map */

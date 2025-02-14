@@ -1,0 +1,351 @@
+
+  // Practica de SASS.
+  // Replicar la pagina de https://kenney.nl/
+  // Requisitos: Se deben usar Mixins, variables y debe ser responsive
+  //   Opcional: Realizar las animaciones que contiene 
+  
+  // ó
+  
+  // Realizar el portafolio con SASS
+  // Requisitos: @extend "👆"
+  //   Opcional: Mejorar portafolio
+  // Fecha de entrega: 20/12/2024
+
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+$color1: #eff4f8
+$color2: linear-gradient(0deg, #7C5EC6 0%, #B073F0 100%)
+$color2-gradient: linear-gradient(0deg, #7C5EC6 0%, #B073F0 100%)
+$color3: #ffd401
+$color4: linear-gradient(0deg, #ff8d00 0%, #ffA500 100%)
+$color5: #262632
+$color-hover: #ce2c64
+$color2-hover: #403f51
+
+@keyframes wave-top
+  0%
+    background-position: 0 0
+  100%
+    background-position: 1280px 0
+
+@keyframes wave-bottom
+  0%
+    background-position: 1280px 0
+  100%
+    background-position: 0 0
+
+@mixin wave($url, $height, $name)
+  height: $height
+  width: 100%
+  background-image: $url
+  background-size: 1280px 2rem
+  background-repeat: repeat-x
+  animation: $name 8s linear infinite
+
+body
+  background-color: $color1
+  color: black
+
+.header
+  &__donations
+    height: 3rem
+    cursor: pointer
+    padding: 0.8rem 4rem
+    background-color: $color3
+    display: flex
+    justify-content: center
+    &__sparkle
+      max-width: 500px
+      height: 0.8rem
+    &__text
+      font-size: 0.6rem
+      text-align: center
+  &__nav
+    position: relative
+    padding: 1rem 2rem
+    display: flex
+    justify-content: center
+    align-items: center
+    &__menu
+      position: absolute
+      left: 2rem
+      top: 50%
+      &__icon
+        max-width: 500px
+        height: 0.8rem
+        cursor: pointer
+      &__list
+        top: 0
+        left: 0
+        position: fixed
+        background-color: $color5
+        color: $color1
+
+        padding: 2rem 2rem 3rem 2rem
+        list-style: none
+        display: flex
+        transform: translateX(-100%)
+        flex-direction: column
+        gap: 1.2rem
+        width: 15rem
+        height: 100vh
+        overflow-x: hidden
+        transition-duration: 0.2s
+        &__close
+          text-align: right
+        &__item
+          max-width: 500px
+          font-size: 1.7rem
+        &__item:hover, &__close:hover, &__link:hover
+          cursor: pointer
+          color: $color-hover
+      &:hover &__list
+        transform: translateX(0)
+    &__logo
+      max-width: 500px
+      height: 3.5rem
+      cursor: pointer
+    &__list // Toda la barra de navegacion en grande
+      max-width: 500px
+      display: none
+
+    @media screen and (min-width: 950px)
+      &__menu
+        display: none
+      &__list
+        position: static
+        margin: 3em 3em 3em 3em
+        display: flex
+        list-style: none
+        gap: 2rem
+        font-family: 'Noto Sans', sans-serif
+        font-weight: bold
+        font-size: smaller
+       
+      &__list__izq
+        display: flex
+        
+        gap: 2rem
+      &__list__der
+        display: flex
+        justify-content: right
+        gap: 2rem
+    
+       
+        
+        
+      
+        
+        
+
+.main
+  padding: 2rem 0
+  display: flex
+  flex-direction: column
+  width: 100%
+  gap: 5rem
+  &__section
+    display: flex
+    flex-direction: column
+    alimax-gn-item500pxcenter
+    gap: 2rem
+    &__img
+      wmax-idth: 8500px
+    &__title
+      font-family: Poppins, sans-serif
+      font-size: 1rem
+      text-align: center
+    &__text
+      font-size: 1rem
+      text-align: center
+    &__buttons
+      font-family: 'Noto Sans', sans-serif
+      display: flex
+      gap: 1rem
+      flex-direction: column
+      align-items: center
+      &__free
+        transition: all 0.1s ease
+        cursor: pointer
+        background: $color2-gradient
+        color: $color1
+        padding: 0.6rem 2.3rem
+        border: none
+        border-radius: 0.2rem
+        font-size: 1rem
+        font-weight: bold
+        box-shadow: 0 5px 10px rgb(0, 0, 0)
+      &__free:hover
+        background: $color2-hover
+      &__all
+        font-size: 0.6rem
+        color: black
+        text-decoration: none
+    &__button
+      font-family: 'Noto Sans', sans-serif
+      display: flex
+      gap: 1rem
+      flex-direction: column
+      transition: all 0.1s ease
+      cursor: pointer
+      background: $color2
+      color: $color1
+      padding: 0.6rem 2.3rem
+      border: none
+      border-radius: 0.2rem
+      font-size: 1rem
+      font-weight: bold
+      box-shadow: 0 5px 10px rgb(0, 0, 0)
+    &__button:hover
+      background: $color2-hover
+    &__content
+      display: flex
+      flex-direction: column
+      justify-content: center
+      gap: 2rem
+      align-items: center
+      max-width: 800px
+      width: 100%
+      min-height: 60vh
+      padding: 2rem
+      &__title
+        color: $color1
+      &__img
+        wmax-idth: 1500px
+        height: 100%
+      &__text
+        text-align: center
+      &__button
+        font-family: 'Noto Sans', sans-serif
+        display: flex
+        gap: 1rem
+        flex-direction: column
+        background: red
+        transition: all 0.1s ease
+        cursor: pointer
+        background: $color1
+        color: $color5
+        padding: 0.6rem 2.3rem
+        border: none
+        border-radius: 0.2rem
+        font-size: 1rem
+        font-weight: bold
+        box-shadow: 0 5px 10px rgb(0, 0, 0)
+      &__button:hover
+          background: $color2-hover
+          color: $color1
+
+        
+    &--purple
+      background: $color2
+      &__top
+        height: 2rem
+        width: 100%
+        background-image: url(./imgs/frontpage-wave-top.svg)
+        background-size: 1280px 2rem
+        background-repeat: repeat-x
+        animation: wave-top 8s linear infinite
+      &__bottom
+        height: 3rem
+        width: 100%
+        background-image: url(./imgs/frontpage-wave-bottom.svg)
+        background-size: 1280px 3rem
+        background-repeat: repeat-x
+        animation: wave-bottom 8s linear infinite     
+    &--orange
+      background: $color4
+      &__top
+        height: 1.5rem
+        width: 100%
+        background-image: url(./imgs/frontpage-wave-top.svg)
+        background-size: 1280px 1.5rem
+        background-repeat: repeat-x
+        animation: wave-top 8s linear infinite
+        
+      &__bottom
+        height: 1.5rem
+        width: 100%
+        background-size: 1280px 1.5rem
+        background-repeat: repeat-x
+        animation: wave-bottom 8s linear infinite
+        background-image: url(./imgs/frontpage-wave-bottom.svg)
+        
+    &__form
+      text-align: center
+      display: flex
+      flex-direction: column
+      align-items: center
+      gap: 1.5rem
+      width: 100%
+      padding: 2rem 
+    
+      
+      &__title
+        font-family: 'Noto Sans', sans-serif
+        font-size: 2em
+
+      &__input
+        box-sizing: border-box
+        width: 100%
+        padding: 0.75em
+        max-width: 500px  
+        text-align: center
+        border: none
+        border-radius: 0.4em
+        border-right: 16px solid transparent
+        font-size: 0.9em
+        font-family: 'Noto Sans', sans-serif
+        box-shadow: 0px 2px #0000001c
+        transition: background-color 0.25sease-out
+      &__input:focus
+        background: $color3
+        color: $color5
+        outline: none
+        &::placeholder
+          color: $color3
+      &__button                                   
+        font-family: 'Poppins', sans-serif
+        width: fit-content
+        display: flex
+        gap: 1rem
+        flex-direction: column
+        transition: all 0.1s ease
+        cursor: pointer
+        background: $color2
+        color: $color1
+        padding: 0.6rem 2.3rem
+        border: none
+        border-radius: 0.2rem
+        font-size: 1rem
+        font-weight: bold
+        box-shadow: 0 5px 10px rgb(0, 0, 0) 
+        
+
+      &__text
+        font-size: 75% 
+        opacity: 0.5
+        line-height: 18px
+        display: flex
+        
+.footer
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 1rem
+  padding: 1rem
+  font-size: 0.8rem
+  color: $color2-hover 
+  &__list
+    display: flex
+    list-style: none
+    &__item
+      padding: 0.5rem
+      &:nth-child(2)
+        border-left: 1px solid $color2-hover
+      &:nth-child(3)
+        border-left: 1px solid $color2-hover
+        border-right: 1px solid $color2-hover 

@@ -14,6 +14,11 @@ $color-cuarto: #96b86a
 // Lista de colores
 
 $colores: (#b86a6a, #325834, #2a93a6, #96b86a)
+$colores.nth(0)
+$colores.nth(1)
+$colores.nth(2)
+$colores.nth(3)
+
 
 // Mixins (plantillas)
 // Los mixins se llaman con @mixin y deben tener un nombre
@@ -36,9 +41,9 @@ $colores: (#b86a6a, #325834, #2a93a6, #96b86a)
   @if $direction == row
     gap: 1rem + $gap
   @else if $direction == column
-    gap: 2rem / $gap
+    gap: calc(2rem / $gap)
   @else 
-    gap: 0 + $gap
+    gap: 0 + $gap // equivalente en js => gap = 0 + gap
 
 
 @mixin colores($border, $padding) // #{2.5}rem✅ #{2.5rem}rem❌
@@ -48,14 +53,14 @@ $colores: (#b86a6a, #325834, #2a93a6, #96b86a)
   outline: 1px solid $color-cuarto
 
   // Declaracion literal
-  padding: #{$padding}rem
+  padding: #{$padding}rem // #{2.5}rem -> 2.5rem
   
 
   @if $padding > 2
     border-radius: 1rem
-  @else if $padding <= 1
+  @else if $padding <= 1 and $padding > 0.5
     border-radius: 0.5rem
-  @else if $padding == 0.5
+  @else if not $padding == 0.5
     border-radius: 0.2rem
   @else
     border-radius: 0.1rem
@@ -70,7 +75,7 @@ nav
   padding: 1rem
   ul
     // @include para llamar a un mixin
-    @include alinear
+    @include alinear('row')
     list-style: none
     gap: 1rem
 
@@ -110,6 +115,5 @@ div
       border: 10px solid black
   button
     @include base
-
 
 

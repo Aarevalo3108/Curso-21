@@ -1,0 +1,99 @@
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+
+
+$color1: #0000a8
+$color2: #001d76
+$color3: #3800a8
+$color4: #4c958d
+$color5: #007676
+
+
+@mixin base
+  background-color: $color3
+  color: $color4
+  text-align: center
+  border-radius: 1rem
+  padding: 0.5rem
+
+body
+  // @include base <- color de fondo y texto diferente
+  background-color: $color4
+  color: $color2
+  // padding: 1rem
+  display: flex
+  flex-direction: column
+  gap: 1rem
+
+.titulo
+  @include base
+  box-shadow: 5px 5px 15px $color1
+
+.contenedor
+  display: flex
+  flex-direction: column
+
+.lista
+  display: flex
+  flex-direction: column
+  @include base
+  li
+    padding: 0.5rem
+    box-shadow: 5px 5px 15px $color1
+    border-radius: 1rem
+
+.imagen
+  // @include base <- no necesita todos los estilos
+  width: 100%
+  height: 200px
+  object-fit: cover
+  border-radius: 1rem
+
+
+.seccion
+  position: relative
+  display: flex
+  flex-direction: column
+  background-color: $color4
+  height: 50vh
+  padding: 1rem
+  gap: 1rem
+  .nav
+    display: flex
+    gap: 1rem
+    justify-content: space-between
+    list-style: none
+    li
+      background-color: $color1
+      color: $color4
+      padding: 0.5rem
+      border-radius: 1rem
+      .menu
+        display: none
+        position: absolute
+        left: 0
+        color: white
+        background: $color5
+        padding: 1rem
+      .CSS
+        left: auto
+    .lineas:hover .menu
+      display: block
+
+    ul
+      display: flex
+      flex-direction: column
+      list-style-type: none
+      li
+        color: white
+        padding: 0.5rem
+        background-color: transparent
+  .contenido
+    .publicidad
+      @include base
+    display: flex
+    flex-direction: column
+    gap: 1rem
