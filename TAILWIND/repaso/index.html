@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind Repaso</title>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- <link rel="stylesheet" href="./src/styles.css"> -->
+</head>
+<body class="flex  flex-col items-center gap-[50vh] bg-blue-300 pb-64">
+  <nav class="flex items-center justify-between rounded-2xl p-8 shadow-md gap-2">
+    <img class="w-16 h-16" src="./img/logo.png" alt="logo">
+    <ul class="flex gap-4 justify-around h-full w-full border-1 border-blue-400 rounded-lg p-2
+    [&>li]:hover:bg-blue-400 [&>li]:transition-all">
+      <li class="bg-blue-200 p-2 rounded-lg">Home</li>
+      <li class="bg-blue-200 p-2 rounded-lg">About</li>
+      <li class="bg-blue-200 p-2 rounded-lg">Contact</li>
+    </ul>
+  </nav>
+  <h1 data-aos="zoom-out" class="text-4xl">WWF. Pandas de confianza</h1>
+  <a data-aos="flip-right" class="text-2xl" href="#">Enlace</a>
+  <button data-aos="flip-left" class="bg-blue-700 hover:scale-110 animate-pulse transition-all  text-white p-2 rounded-lg">Click Aqui</button>
+  <input data-aos="fade-right" data-aos-anchor-placement="bottom-bottom" placeholder="Ingresa un Texto..." class="text-black bg-white rounded-2xl p-2" type="text" name="prueba" id="prueba">
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

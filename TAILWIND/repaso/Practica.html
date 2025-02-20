@@ -1,0 +1,271 @@
+<!-- 
+ 
+Realizar la pagina de mercadolibre con Tailwind
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <title>MercadoLibre</title>
+</head>
+<body class="bg-[#ebebeb]">
+  <!-- >>>GABRIEL<<< -->
+  <div id="aplicacion" class="bg-black flex gap-2 items-center">
+    <img class="p-4 w-27 h-22 rounded-2x1" src="./img/ML.png" alt="ML">
+    <div class="text-white">
+      <p class="h-12 p-1 text-xs">Abre la app para comprar más fácil y rápido</p>
+      <span class="h-12 p-1 text-xs mt-1 mb-1">4.5★</span>
+      <span class="h-12 p-1 text-xs mt-10">+17M opiniones</span>
+    </div>
+    <button class="bg-blue-500 py-2 px-4 mr-4 rounded text-white p-3">Abrir</button>
+  </div>
+  
+  <header id="cabecera" class="bg-yellow-400">
+    <!-- Rafael: NavBar -->
+    <nav id="navegacion" class="flex justify-around">
+      <img id="logo" src="./img/ML.png" alt="logo" width="134px" height="34px">
+      <div>
+        <span>🔍</span>
+        <input id="buscador" type="text" name="" id="" class="rounded-b-lg b">
+      </div>
+      <button id="menu"></button>
+    </nav>
+    <!-- -------- -->
+    <!-- Jose y Angel: Seccion de ofertas y categorias -->
+    <section id="ofertas">
+      <div id="slider">
+        <img src="./img/slider1.png" alt="slider1">
+        <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
+      </div>
+      <ul id="categorias">
+        <li>
+          <img src="./img/ofertas.png" alt="ofertas">
+          <span></span>
+        </li>
+        <li>
+          <img src="./img/camisa.png" alt="Moda">
+          <span></span>
+        </li>
+        <li>
+          <img src="./img/carro.png" alt="Vehículos">
+          <span></span>
+        </li>
+        <li>
+          <img src="" alt="">
+          <span></span>
+        </li>
+        <!-- <li></li> -->
+      </ul>
+    </section>
+    <!-- -------- -->
+  </header>
+  <main>
+    <section id="historial">
+      <div>
+        <span>Visto recientemente</span>
+        <img src="" alt="">
+        <p></p>
+        <span></span>
+        <span></span>
+      </div>
+      <div>
+        <img src="" alt="">
+        <p></p>
+        <span></span>
+        <button></button>
+      </div>
+      <!-- <div>
+        <img src="" alt="">
+        <p></p>
+        <span></span>
+        <button></button>
+      </div> -->
+    </section>
+
+    <section id="cuenta">
+      <p></p>
+      <button></button>
+      <span></span>
+    </section>
+
+    <section id="inspiracion">
+      <span></span>
+      <div>
+        <div>
+          <img src="" alt="">
+          <p></p>
+          <span>US$ 60</span>
+          <span></span>
+        </div>
+        <div>
+          <img src="" alt="">
+          <p></p>
+          <span>US$ 60</span>
+          <span></span>
+        </div>
+        <div>
+          <img src="" alt="">
+          <p></p>
+          <span>US$ 60</span>
+          <span></span>
+        </div>
+        <div>
+          <img src="" alt="">
+          <p></p>
+          <span>US$ 60</span>
+          <span></span>
+        </div>
+      </div>
+      <button></button>
+    </section>
+
+    <section id="tePuedeInteresar">
+      <span></span>
+      <div>
+        <div>
+          <img src="" alt="">
+          <p></p>
+          <span>US$ 60</span>
+          <span></span>
+        </div>
+        <div>
+          <img src="" alt="">
+          <p></p>
+          <span>US$ 60</span>
+          <span></span>
+        </div>
+        <div>
+          <img src="" alt="">
+          <p></p>
+          <span>US$ 60</span>
+          <span></span>
+        </div>
+        <div>
+          <img src="" alt="">
+          <p></p>
+          <span>US$ 60</span>
+          <span></span>
+        </div>
+      </div>
+      <button></button>
+    </section>
+    <article>
+      <div>
+        <div>
+          <span></span>
+          <h2></h2>
+        </div>
+        <button></button>
+      </div>
+      <img src="telefono" alt="">
+    </article>
+    <article>
+      <div>
+        <div>
+          <span></span>
+          <h2></h2>
+        </div>
+        <button></button>
+      </div>
+      <img src="proteina" alt="">
+    </article>
+    <section id="historial">
+      <span></span>
+      <div>
+        <div>
+          <img src="" alt="">
+          <p></p>
+          <span>US$ 60</span>
+          <span></span>
+        </div>
+      </div>
+      <button></button>
+    </section>
+    <article>
+      <div>
+        <div>
+          <span></span>
+          <h2></h2>
+        </div>
+        <button></button>
+      </div>
+      <img src="iluminacion" alt="">
+    </article>
+    <article>
+      <div>
+        <div>
+          <span></span>
+          <h2></h2>
+        </div>
+        <button></button>
+      </div>
+      <img src="salud" alt="">
+    </article>
+    <section id="coleccion">
+      <h3></h3>
+      <div>
+        <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
+        <a href="">Descubre mas</a>
+      </div>
+    </section>
+    <section id="categoriasFooter">
+      <h2>Categorias</h2>
+      <div>
+        <div>
+          <img src="" alt="">
+          <span></span>
+        </div>
+      </div>
+    </section>
+  </main>
+  <section>
+    <img src="preguntas" alt="">
+    <h3></h3>
+    <p></p>
+    <a href=""></a>
+    <div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </section>
+  <footer>
+    <div>
+      <img src="" alt="">
+      <span></span>
+    </div>
+    <div>
+      <ul>
+        <li>Mi cuenta</li>
+        <li>Mis ofertas</li>
+        <li>Historial</li>
+        <li>Ofertas <span>NUEVO</span></li>
+        <li>Favoritos</li>
+        <li>Tiendas Oficiales</li>
+        <li>Categorias</li>
+        <li>Ayuda</li>
+        <li>Vender</li>
+      </ul>
+      <div>
+        <a href="">Ingresa</a>
+        <a href="">Crea tu cuenta</a>
+      </div>
+      <div>  
+        <p>Términos y condiciones Como cuidamos tu privacidad</p>
+        <p> © 1999-2025 MercadoLibre Venezuela S.R.L. RIF: J-30684267-5.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
