@@ -125,33 +125,44 @@ if (edadUsuario >= 18){
 }
 
 // Switch
-/*let dia = prompt("Ingresa un numero del 1 al 7");
-switch (Number(dia)) {
-  case 1:
+let dia = prompt("Ingresa un numero del 1 al 7");
+let diaSemana;
+switch (dia) {
+  case '1':
+    diaSemana = "Lunes";
     alert("Lunes");
     break;
-  case 2:
+  case '2':
+    diaSemana = "Martes";
     alert("Martes");
     break;
-  case 3:
+  case '3':
+    diaSemana = "Miercoles";
     alert("Miercoles");
     break;
-  case 4:
+  case '4':
+    diaSemana = "Jueves";
     alert("Jueves");
     break;
-  case 5:
+  case '5':
+    diaSemana = "Viernes";
     alert("Viernes");
     break;
-  case 6:
+  case '6':
+    diaSemana = "Sabado";
     alert("Sabado");
     break;
-  case 7:
+  case '7':
+    diaSemana = "Domingo";
     alert("Domingo");
     break;
   default:
+    diaSemana = "Dia no valido";
     alert("Dia no valido");
     break;
-}*/
+}
+
+console.log(diaSemana);
 
 
 // Ejercicios:

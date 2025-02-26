@@ -11,74 +11,93 @@ Realizar la pagina de mercadolibre con Tailwind
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
   <title>MercadoLibre</title>
+  <link rel="preload" href="./fonts/proximanova-light.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-head-react="true">
+  <link rel="preload" href="./fonts/proximanova-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-head-react="true">
+  <link rel="preload" href="./fonts/proximanova-semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-head-react="true">
+  <style>
+    *{
+      font-family: "Proxima Nova",-apple-system,Roboto,Arial,sans-serif,sans-serif;
+    }
+    
+  
+  </style>
 </head>
 <body class="bg-[#ebebeb]">
   <!-- >>>GABRIEL<<< -->
-  <div id="aplicacion" class="bg-black flex gap-2 items-center">
-    <img class="p-4 w-27 h-22 rounded-2x1" src="./img/ML.png" alt="ML">
+  <div id="aplicacion" class="bg-black flex px-4 py-2 gap-3.5 items-center">
+    <img class="w-13 rounded-xl" src="./img/ML.png" alt="ML">
     <div class="text-white">
-      <p class="h-12 p-1 text-xs">Abre la app para comprar más fácil y rápido</p>
-      <span class="h-12 p-1 text-xs mt-1 mb-1">4.5★</span>
-      <span class="h-12 p-1 text-xs mt-10">+17M opiniones</span>
+      <p class="flex text-xs leading-relaxed font-semibold">Abre la app para comprar más fácil y rápido</p>
+      <span class="flex text-xs mt-1">4.5★ +17M opiniones </span>
     </div>
-    <button class="bg-blue-500 py-2 px-4 mr-4 rounded text-white p-3">Abrir</button>
+    <button class="bg-blue-500 text-sm py-1.5 px-3 rounded text-white p-3">Abrir</button>
   </div>
-  
-  <header id="cabecera" class="bg-yellow-400">
+  <!-- ---------- -->
+  <header id="cabecera" class="bg-linear-[0deg,#ebebeb_40%,#fff15a_60%]">
     <!-- Rafael: NavBar -->
-    <nav id="navegacion" class="flex justify-around">
-      <img id="logo" src="./img/ML.png" alt="logo" width="134px" height="34px">
-      <div>
+    <nav id="navegacion" class="flex gap-2 justify-around items-center p-1">
+      <img id="logo" src="./img/MLogo.png" alt="logo" class="h-8 rounded-xl">
+      <div class="flex w-fit h-fit justify-center bg-white">
         <span>🔍</span>
-        <input id="buscador" type="text" name="" id="" class="rounded-b-lg b">
+        <input id="buscador" class="text-lg" placeholder=" Estoy buscando..." type="text" name="" id="">
       </div>
-      <button id="menu"></button>
+      <button id="menu" class="h-10">
+        <svg width="18px" height="18px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round"></path> <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round"></path> <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round"></path> </g></svg>
+      </button>
     </nav>
     <!-- -------- -->
     <!-- Jose y Angel: Seccion de ofertas y categorias -->
-    <section id="ofertas">
+    <section id="ofertas" class="p-2">
       <div id="slider">
-        <img src="./img/slider1.png" alt="slider1">
+        <img class="w-full rounded-md" src="./img/slider1.png" alt="slider1">
         <img src="" alt="">
         <img src="" alt="">
         <img src="" alt="">
       </div>
-      <ul id="categorias">
-        <li>
-          <img src="./img/ofertas.png" alt="ofertas">
-          <span></span>
+      <ul id="categorias" class="flex items-center gap-6 p-4 text-xs text-center w-12">
+        <li class="flex flex-col gap-2 items-center justify-center">
+          <img class="bg-white rounded-full h-12 max-w-12" src="./img/ofertas.png" alt="ofertas">
+          <span>Ofertas</span>
         </li>
-        <li>
-          <img src="./img/camisa.png" alt="Moda">
-          <span></span>
+        <li class="flex flex-col gap-2 items-center justify-center">
+          <img class="bg-white rounded-full h-12 max-w-12" src="./img/camisa.png" alt="Moda">
+          <span>Moda</span>
         </li>
-        <li>
-          <img src="./img/carro.png" alt="Vehículos">
-          <span></span>
+        <li class="flex flex-col gap-2 items-center justify-center">
+          <img class="bg-white rounded-full h-12 max-w-12 p-2" src="./img/carro.png" alt="Vehículos">
+          <span>Vehículos</span>
         </li>
-        <li>
-          <img src="" alt="">
-          <span></span>
-        </li>
+        <li class="flex flex-col gap-2 items-center justify-center">
+          <img class="bg-white rounded-full h-12 max-w-12" src="./img/casa.png" alt="Inmuebles">
+          <span>Inmuebles</span>
+        </li> 
         <!-- <li></li> -->
       </ul>
     </section>
     <!-- -------- -->
   </header>
-  <main>
-    <section id="historial">
-      <div>
-        <span>Visto recientemente</span>
-        <img src="" alt="">
-        <p></p>
-        <span></span>
-        <span></span>
+  <main class="grid grid-cols-1 gap-4 p-4 w-fit">
+    <section id="historial" class="flex gap-4 bg-transparent overflow-auto">
+      <div class="flex items-center flex-col bg-white p-2 rounded-lg  min-w-[150px]">
+        <span class="text-sm">Visto recientemente</span>
+        <img class="h-24" src="./img/freidora.png" alt="freidora">
+        <p class="text-[9px]">Freidora Electrica Industrial 1 Tina 6 Litros Tienda Fisica</p>
+        <span class="self-start">US$ 66 </span>
+        <span class="self-start text-green-500">Envio gratis</span>
       </div>
-      <div>
-        <img src="" alt="">
-        <p></p>
-        <span></span>
-        <button></button>
+      <div class="flex items-center flex-col bg-white p-2 rounded-lg  min-w-[150px]">
+        <span class="text-sm">Visto recientemente</span>
+        <img class="h-24" src="./img/freidora.png" alt="freidora">
+        <p class="text-[9px]">Freidora Electrica Industrial 1 Tina 6 Litros Tienda Fisica</p>
+        <span class="self-start">US$ 66 </span>
+        <span class="self-start text-green-500">Envio gratis</span>
+      </div>
+      <div class="flex items-center flex-col bg-white p-2 rounded-lg  min-w-[150px]">
+        <span class="text-sm">Porque te interesa</span>
+        <img class="h-24" src="./img/osciloscopio.png" alt="">
+        <p class="text-[9px]">Osciloscopio Digital Portátil Tester Transistor 3en1</p>
+        <span class="self-start">US$ 79</span>
+        <span class="self-start text-green-500">Envio gratis</span>
       </div>
       <!-- <div>
         <img src="" alt="">
@@ -88,134 +107,162 @@ Realizar la pagina de mercadolibre con Tailwind
       </div> -->
     </section>
 
-    <section id="cuenta">
-      <p></p>
-      <button></button>
-      <span></span>
+    <!-- Jose: Crear Cuenta -->
+    <section class="bg-white p-4 rounded flex flex-col gap-4" id="cuenta">
+      <p class="font-bold">¡Crea una cuenta y mejora tu experiencia!</p>
+      <button class="bg-[#3483FA] text-white rounded py-2 px-4" >Crear Cuenta</button>
+      <span class="text-gray-600 text-center" >¿Ya tienes cuenta? Ingresar</span>
     </section>
-
-    <section id="inspiracion">
-      <span></span>
-      <div>
-        <div>
-          <img src="" alt="">
-          <p></p>
-          <span>US$ 60</span>
-          <span></span>
+    <!-- Inspiracion -->
+    <section id="inspiracion" class="flex gap-0.5 flex-col w-full rounded-2xl">
+      <h2 class="text-xl bg-white p-2">Inspirado en lo ultimo que viste</h2>
+      <div class="grid grid-cols-2 gap-0.5">
+        <div class="bg-white p-2 flex flex-col gap-4">
+          <img src="./img/freidora.png" alt="">
+          <p class="text-sm">Freidora Electrica Industrial</p>
+          <span class="text-sm">US$ 60</span>
+          <span class="text-xs text-green-500">Envio gratis</span>
         </div>
-        <div>
-          <img src="" alt="">
-          <p></p>
-          <span>US$ 60</span>
-          <span></span>
+        <div class="bg-white p-2 flex flex-col gap-4">
+          <img src="./img/freidora.png" alt="">
+          <p class="text-sm">Freidora Electrica Industrial</p>
+          <span class="text-sm">US$ 60</span>
+          <span class="text-xs text-green-500">Envio gratis</span>
         </div>
-        <div>
-          <img src="" alt="">
-          <p></p>
-          <span>US$ 60</span>
-          <span></span>
+        <div class="bg-white p-2 flex flex-col gap-4">
+          <img src="./img/freidora.png" alt="">
+          <p class="text-sm">Freidora Electrica Industrial</p>
+          <span class="text-sm">US$ 60</span>
+          <span class="text-xs text-green-500">Envio gratis</span>
         </div>
-        <div>
-          <img src="" alt="">
-          <p></p>
-          <span>US$ 60</span>
-          <span></span>
+        <div class="bg-white p-2 flex flex-col gap-4">
+          <img src="./img/freidora.png" alt="">
+          <p class="text-sm">Freidora Electrica Industrial</p>
+          <span class="text-sm">US$ 60</span>
+          <span class="text-xs text-green-500">Envio gratis</span>
         </div>
       </div>
-      <button></button>
+      <a href="#" class=" text-blue-500 bg-white p-2 flex justify-between">
+        Ver mas <span>></span>
+      </a>
     </section>
 
-    <section id="tePuedeInteresar">
-      <span></span>
-      <div>
-        <div>
-          <img src="" alt="">
-          <p></p>
-          <span>US$ 60</span>
-          <span></span>
+    <section id="tePuedeInteresar" class="flex gap-0.5 flex-col w-full rounded-2xl">
+      <h2 class="text-xl bg-white p-2">Relacionado con tus visitas en Herramientas</h2>
+      <div class="grid grid-cols-2 gap-0.5">
+        <div class="bg-white p-2 flex flex-col gap-4">
+          <img src="./img/freidora.png" alt="">
+          <p class="text-sm">Freidora Electrica Industrial</p>
+          <span class="text-sm">US$ 60</span>
+          <span class="text-xs text-green-500">Envio gratis</span>
         </div>
-        <div>
-          <img src="" alt="">
-          <p></p>
-          <span>US$ 60</span>
-          <span></span>
+        <div class="bg-white p-2 flex flex-col gap-4">
+          <img src="./img/freidora.png" alt="">
+          <p class="text-sm">Freidora Electrica Industrial</p>
+          <span class="text-sm">US$ 60</span>
+          <span class="text-xs text-green-500">Envio gratis</span>
         </div>
-        <div>
-          <img src="" alt="">
-          <p></p>
-          <span>US$ 60</span>
-          <span></span>
+        <div class="bg-white p-2 flex flex-col gap-4">
+          <img src="./img/freidora.png" alt="">
+          <p class="text-sm">Freidora Electrica Industrial</p>
+          <span class="text-sm">US$ 60</span>
+          <span class="text-xs text-green-500">Envio gratis</span>
         </div>
-        <div>
-          <img src="" alt="">
-          <p></p>
-          <span>US$ 60</span>
-          <span></span>
+        <div class="bg-white p-2 flex flex-col gap-4">
+          <img src="./img/freidora.png" alt="">
+          <p class="text-sm">Freidora Electrica Industrial</p>
+          <span class="text-sm">US$ 60</span>
+          <span class="text-xs text-green-500">Envio gratis</span>
         </div>
       </div>
-      <button></button>
+      <a href="#" class=" text-blue-500 bg-white p-2 flex justify-between">
+        Ver mas <span>></span>
+      </a>
     </section>
-    <article>
-      <div>
-        <div>
-          <span></span>
-          <h2></h2>
-        </div>
-        <button></button>
+    <!-- Fernando: Articulos -->
+    <article class="col-span-1 md:col-span-2 lg:col-span-3">
+      <div class="container mx-auto py-8">
+          <div class="bg-white shadow-md rounded-lg overflow-hidden flex  h-[190px]">
+            <div class="p-4 w-full">
+              <span class="text-gray-600 text-sm">Ultima tecnologia</span>
+              <h2 class="text">ACTUALIZA TU <br>SMARTPHONE</h2>
+              <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded">Ver Mas</button>
+            </div>
+            <img src="./img/telefono.png" alt="SMARTPHONE" class="h-full">
+          </div> 
       </div>
       <img src="telefono" alt="">
     </article>
     <article>
-      <div>
-        <div>
-          <span></span>
-          <h2></h2>
-        </div>
-        <button></button>
+      <div class="container mx-auto py-8">
+        <div class="bg-white shadow-md rounded-lg overflow-hidden flex  h-[190px]">
+          <div class="p-4 w-full">
+            <span class="text-gray-600 text-sm">ENVÍO GRATIS EN 48H</span>
+            <h2 class="text">¡ENTRENA <br>Y SUPERA TUS LÍMITES!</h2>
+            <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded">Ver Mas</button>
+          </div>
+          <img src="./img/proteina.png" alt="proteina" class="h-full">
+        </div> 
       </div>
-      <img src="proteina" alt="">
     </article>
-    <section id="historial">
-      <span></span>
-      <div>
-        <div>
-          <img src="" alt="">
-          <p></p>
-          <span>US$ 60</span>
-          <span></span>
+    <!-- Jose: Historial -->
+    <section class="bg-white flex flex-col" id="historial">
+      <h2 class="text-black">Historial de navegacion</h2>
+      <div class="flex-col">
+        <div class="flex">
+          <img class="gap-4 h-24" src="./img/freidora.png" alt="Freidora">
+          <div class="flex flex-col">
+            <p>Licuadora Oster Clásica Vaso Vidrio, Picatodo Original 1200w</p>
+            <span>US$ 60</span>
+            <span>Envio gratis</span>
+          </div>
         </div>
       </div>
-      <button></button>
+      <a class="text-blue-500" href="#">Ver historial de navegacion ></a>
     </section>
+    <!-- ------- -->
     <article>
-      <div>
-        <div>
-          <span></span>
-          <h2></h2>
-        </div>
-        <button></button>
+      <div class="container mx-auto py-8">
+        <div class="bg-white shadow-md rounded-lg overflow-hidden flex  h-[190px]">
+          <div class="p-4 w-full">
+            <span class="text-gray-600 text-sm">ENVÍO GRATIS EN 48H</span>
+            <h2 class="text">¡LO MEJOR EN ILUMINACIÓN!</h2>
+            <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded">Ver Mas</button>
+          </div>
+          <img src="./img/leds.png" alt="leds" class="h-full">
+        </div> 
       </div>
-      <img src="iluminacion" alt="">
     </article>
     <article>
-      <div>
-        <div>
-          <span></span>
-          <h2></h2>
-        </div>
-        <button></button>
+      <div class="container mx-auto py-8">
+        <div class="bg-white shadow-md rounded-lg overflow-hidden flex  h-[190px]">
+          <div class="p-4 w-full">
+            <span class="text-gray-600 text-sm">ENVÍO GRATIS EN 48H</span>
+            <h2 class="text">¡CUIDA TU SALUD <br>SIN SALIR DE CASA!</h2>
+            <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded">Ver Mas</button>
+          </div>
+          <img src="./img/pastillas.png" alt="pastillas" class="h-full">
+        </div> 
       </div>
-      <img src="salud" alt="">
     </article>
-    <section id="coleccion">
-      <h3></h3>
-      <div>
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
+    <!-- >>>>>> GABRIEL <<<<<-->
+    <section id="coleccion" class="gap-2">
+      <h3 class="mb-5 text-lg">Colecciones:
+        <select name="electrodomesticos" id="electrodomesticos" class="">
+          <option value="electrodomesticos" class="rounded">Electrodomésticos</option>
+          <option value="mascotas">Mascotas</option>
+          <option value="seguridad">Seguridad</option>
+          <option value="maquillaje">Maquillaje</option>
+        </select> 
+      </h3>
+      
+      <div class="grid grid-cols-2 gap-1">
+        <img src="./img/airfrayer.png" alt="">
+        <img src="./img/licuadora.png" alt="">
+        <img src="./img/tostiarepa.png" alt="">
+        <img src="./img/peso.png" alt="">
+        <img src="./img/pastadivisa.png" alt="">
+        <img src="./img/regadera.png" alt="">
         <a href="">Descubre mas</a>
       </div>
     </section>
@@ -240,32 +287,35 @@ Realizar la pagina de mercadolibre con Tailwind
       <div></div>
     </div>
   </section>
-  <footer>
-    <div>
-      <img src="" alt="">
-      <span></span>
+  <footer class="bg-white">
+    <!-- Fondo amarillo de imagen y texto -->
+    <div  class="bg-[#FFE600] flex justify-center p-4"> 
+      <img src="./img/MLogo.png" alt="" class="flex w-13 rounded-xl" src="./img/ML.png" alt="ML" >
+      <span class="text-base justify-center p-2">Compra y vende con la app!</span>
     </div>
-    <div>
-      <ul>
+    <!-- Lista --> 
+      <ul class="text-xs grid grid-cols-2 p-8 gap-4">
         <li>Mi cuenta</li>
         <li>Mis ofertas</li>
         <li>Historial</li>
-        <li>Ofertas <span>NUEVO</span></li>
+        <li>Ofertas <span class="p-2"><button class="bg-blue-500 text-sm py-0.5 px-0.7 rounded-full text-white p-1.5">NUEVO</button></span></li>
         <li>Favoritos</li>
         <li>Tiendas Oficiales</li>
         <li>Categorias</li>
         <li>Ayuda</li>
         <li>Vender</li>
       </ul>
-      <div>
-        <a href="">Ingresa</a>
-        <a href="">Crea tu cuenta</a>
+      <!-- Ingrasar y crear -->
+      <div class="flex p-4 g-4 text-sm text-blue-500 border-t-1">
+        <div class="border-r-1 p-1 gap-2 "><a href="">Ingresa</a></div>
+        <div class="p-1"><a href="">Crea tu cuenta</a></div>
       </div>
-      <div>  
+      <div class="text-xs p-8">  
         <p>Términos y condiciones Como cuidamos tu privacidad</p>
         <p> © 1999-2025 MercadoLibre Venezuela S.R.L. RIF: J-30684267-5.</p>
       </div>
     </div>
   </footer>
+
 </body>
 </html>
