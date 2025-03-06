@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Prueba</h1>
+  <div id="form">
+    <label for="name">
+      Ingrese su nombre
+      <input type="text" name="name" id="name">
+    </label>
+    <label for="email">
+      Ingrese su email
+      <input type="email" name="email" id="email">
+    </label>
+    <label for="phone">
+      Ingrese su telefono
+      <input type="tel" name="phone" id="phone">
+    </label>
+    <button onclick="enviarInformacion(event)">Enviar</button>
+  </div>
+  <!-- Llamar varios archivos JS -->
+  <script src="./constants.js"></script>
+  <script src="./regex.js"></script>
+  <script src="./console.js"></script>
+</body>
+</html>

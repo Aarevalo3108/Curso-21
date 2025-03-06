@@ -72,8 +72,7 @@ body {
   color: #eff4f8;
   padding: 2rem 2rem 3rem 2rem;
   list-style: none;
-  display: flex;
-  transform: translateX(-100%);
+  display: none;
   flex-direction: column;
   gap: 1.2rem;
   width: 15rem;
@@ -93,7 +92,7 @@ body {
   color: #ce2c64;
 }
 .header__nav__menu:hover .header__nav__menu__list {
-  transform: translateX(0);
+  display: flex;
 }
 .header__nav__logo {
   max-width: 500px;

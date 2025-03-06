@@ -287,3 +287,141 @@ listaLi.forEach((li, index) => {
 const imgObject = document.querySelectorAll("img");
 
 console.log(imgObject); // Spoiler de las imagenes
+
+
+//  Eventos
+
+// Evento click
+
+const boton = document.getElementById("boton");
+
+boton.addEventListener("click", () => {
+  console.log("Click");
+  // document.getElementById("parrafo").classList.toggle("escondido");
+});
+
+// clase escondido:
+// .escondido{
+//   transform: translateX(0);
+//  }
+
+// Evento mouseover
+
+const parrafo = document.getElementById("parrafo");
+
+parrafo.addEventListener("mouseover", () => {
+  console.log("Mouse over");
+});
+
+
+// Evento mouseout
+
+const parrafo2 = document.getElementById("parrafo2");
+
+parrafo2.addEventListener("mouseout", () => {
+  console.log("Mouse out");
+});
+
+
+/*
+
+Expresiones Regulares: Regex
+Se usan para buscar patrones en cadenas de texto
+
+*/
+
+// Como lo haciamos antes
+
+const malasPalabras = ["recorcholis", "baboso", "chispitas", "chupetin"];
+
+let texto = "Recorcholis , este baboso es un chupetin y se llama chispitas, recorcholis";
+
+// Expresiones Regulares
+
+const regex = /recorcholis|baboso|chupetin|chispitas/gi;
+
+// Desflose de la expresion regular:
+// / / -> Inicio y fin de la expresion regular
+// recorcholis|baboso|chupetin|chispitas -> Patrones de busqueda
+// g -> Global
+// i -> Ignorar mayusculas
+
+console.log(texto.replace(regex, "****"));
+
+texto.replaceAll(regex, "****");
+
+malasPalabras.map((palabra) => {
+  if (texto.includes(palabra)) {
+    texto = texto.replace(palabra, "****");
+  }
+});
+
+console.log("Texto censurado :",texto);
+
+// console.log("Texto no censurado :",texto);
+
+// for (let i = 0; i < malasPalabras.length; i++) {
+//   const palabra = malasPalabras[i];
+//   if (texto.includes(palabra)) {
+//     texto = texto.replace(palabra, "****");
+//   }
+// }
+
+// console.log("Texto censurado :",texto);
+
+
+// Expresion regular para evaluar nombres
+
+const regex2 = /^[a-zA-ZáéíóúÁÉÍÓÚ\s]+$/;
+
+// Desglose de esta expresion:
+
+// ^ -> Inicio de la cadena
+// [a-zA-Z] -> Caracteres de la A a la Z y de la a a la z
+// + -> Uno o mas
+// $ -> Fin de la cadena
+
+const nombre2 = "Pepé Pig    ";
+
+console.log(regex2.test(nombre2)); // true
+
+
+// Expresion regular para evaluar emails
+// En formato: abc@example.com
+const regex3 = /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+
+// Desglose de esta expresion:
+
+// ^ -> Inicio de la cadena
+// [a-zA-Z0-9] -> Caracteres de la A a la Z y de la a a la z y de los 0 al 9
+// + -> Uno o mas
+// $ -> Fin de la cadena
+
+const email = "angel@hotmail.com.ve";
+
+console.log(regex3.test(email));
+
+//  Evaluar numeros de telefono
+//  en formato +000000000000
+//  Ejemplo: +584121032843
+
+const regex4 = /^\+\d{12}$/;
+
+// Desglose de esta expresion:
+
+// ^ -> Inicio de la cadena
+// + -> Uno o mas
+// \d{12} -> 12 digitos
+// $ -> Fin de la cadena
+
+const telefono = "+584121032843";
+
+console.log(regex4.test(telefono));
+
+import libros from "./utils/constants.js";
+
+console.log(libros)
+
+
+
+

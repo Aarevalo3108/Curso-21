@@ -534,4 +534,4 @@ function terminanConS(array){
 }
 console.log(terminanConS(["pruebas", "arroz", "árbol", "tokens"]))
 console.log(terminanConS(["betaS", "sdelsta", "gamas"]))
-console.log(terminanConS([]))
+console.log(terminanConS([])) 
