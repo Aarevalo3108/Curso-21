@@ -3,25 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
   <title>Document</title>
 </head>
-<body>
-  <h1>Prueba</h1>
-  <div id="form">
-    <label for="name">
+<body class="bg-blue-700 flex flex-col gap-4 items-center">
+  <h1 class="text-4xl">Formulario de registro</h1>
+  <form class="grid grid-cols-2 gap-4 p-4 rounded-2xl shadow-md border-2" id="form" method="post" action="#" onsubmit="enviarInformacion(); return false">
+    <label class="flex flex-col p-2 bg-white border-2 border-gray-700 rounded-2xl" for="name">
       Ingrese su nombre
-      <input type="text" name="name" id="name">
+      <!-- 
+      Validar a traves de HTML con las propiedas de un input:
+      
+      - pattern: Una expresion regular que evaluara el contenido (value) del input
+      - title: Una descripcion de lo que debe contener el input
+      - required: Que el input sea obligatorio
+      - placeholder: Una descripcion de lo que debe contener el input
+
+      -->
+      <input placeholder="Ingrese su nombre completo" class="border-b-2 border-gray-700" type="text" name="name" id="name" required pattern="^[a-zA-Z\s]{1,40}$" title="El nombre solo debe contener letras y espacios">
+      <span id="messageName" class="text-red-600"></span>
     </label>
-    <label for="email">
+    <label class="flex flex-col p-2 bg-white border-2 border-gray-700 rounded-2xl" for="lastname">
+      Ingrese su apellido
+      <input placeholder="Ingrese su apellido completo" class="border-b-2 border-gray-700" type="text" name="lastname" id="lastname" required pattern="^[a-zA-Z\s]{1,40}$" title="El apellido solo debe contener letras y espacios">
+      <span id="messageLastname" class="text-red-600"></span>
+    </label>
+    <label class="flex flex-col p-2 bg-white border-2 border-gray-700 rounded-2xl" for="email">
       Ingrese su email
-      <input type="email" name="email" id="email">
+      <input placeholder="Ingrese su email" class="border-b-2 border-gray-700" type="email" name="email" id="email" required pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$">
+      <span id="messageEmail" class="text-red-600"></span>
     </label>
-    <label for="phone">
+    <label class="flex flex-col p-2 bg-white border-2 border-gray-700 rounded-2xl" for="phone">
       Ingrese su telefono
-      <input type="tel" name="phone" id="phone">
+      <input placeholder="Ingrese su telefono" class="border-b-2 border-gray-700" type="tel" name="phone" id="phone" required pattern="^[0-9]{10}$">
+      <span id="messagePhone" class="text-red-600"></span>
     </label>
-    <button onclick="enviarInformacion(event)">Enviar</button>
-  </div>
+    <label class="flex flex-col p-2 bg-white border-2 border-gray-700 rounded-2xl" for="password">
+      Ingrese su contraseña
+      <input placeholder="Ingrese su contraseña" class="border-b-2 border-gray-700" type="password" name="password" id="password" required pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$">
+      <span id="messagePassword" class="text-red-600"></span>
+    </label>
+    <label class="flex flex-col p-2 bg-white border-2 border-gray-700 rounded-2xl" for="confirmpassword">
+      Confirme su contraseña
+      <input placeholder="Confirme su contraseña" class="border-b-2 border-gray-700" type="password" name="confirmpassword" id="confirmpassword" required pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$">
+      <span id="messageConfirmPassword" class="text-red-600"></span>
+    </label>
+    <input class="bg-green-600 p-2 rounded-2xl text-white col-span-2 cursor-pointer" type="submit" value="Enviar Formulario">
+  </form>
+
   <!-- Llamar varios archivos JS -->
   <script src="./constants.js"></script>
   <script src="./regex.js"></script>

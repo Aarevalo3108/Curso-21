@@ -4,28 +4,63 @@
 console.log(libros)
 console.log(regex)
 
-function enviarInformacion(e) {
-  e.preventDefault();
+function enviarInformacion() {
+  console.log("enviando informacion");
+  let bandera = true;
   const name = document.getElementById("name").value;
+  document.getElementById("messageName").innerText = "";
   if(!regex.nombre.test(name)) {
-    alert("El nombre no es valido");
-    return;
+    document.getElementById("messageName").innerText = "El nombre no es valido";
+    bandera = false;
   }
-
+  const lastname = document.getElementById("lastname").value;
+  document.getElementById("messageLastname").innerText = "";
+  if(!regex.nombre.test(lastname)) {
+    document.getElementById("messageLastname").innerText = "El apellido no es valido";
+    bandera = false;
+  }
+  const password = document.getElementById("password").value;
+  document.getElementById("messagePassword").innerText = "";
+  if(!regex.password.test(password)) {
+    document.getElementById("messagePassword").innerText = "La contraseña no es valida";
+    bandera = false;
+  }
+  const confirmPassword = document.getElementById("confirmpassword").value;
+  document.getElementById("messageConfirmPassword").innerText = "";
+  if(password !== confirmPassword) {
+    document.getElementById("messageConfirmPassword").innerText = "Las contraseñas no coinciden";
+    bandera = false;
+  }
   const email = document.getElementById("email").value;
+  document.getElementById("messageEmail").innerText = "";
   if(!regex.correo.test(email)) {
-    alert("El correo no es valido");
-    return;
+    document.getElementById("messageEmail").innerText = "El correo no es valido";
+    bandera = false;
   }
-
   const phone = document.getElementById("phone").value;
+  document.getElementById("messagePhone").innerText = "";
   if(!regex.telefono.test(phone)) {
-    alert("El telefono no es valido");
-    return;
+    document.getElementById("messagePhone").innerText = "El telefono no es valido";
+    bandera = false;
   }
-
-  console.log(name, email, phone);
+  if(bandera) {
+    console.log("El formulario es valido");
+    console.log("Estructura formulario: ", {
+      name,
+      lastname,
+      email,
+      phone,
+      password
+    })
+  }
 }
+
+// const form = document.getElementById("form");
+
+// form.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   enviarInformacion();
+// })
 
 /*
 
