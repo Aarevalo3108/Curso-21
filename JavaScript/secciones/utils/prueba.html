@@ -8,7 +8,7 @@
 </head>
 <body class="bg-blue-700 flex flex-col gap-4 items-center">
   <h1 class="text-4xl">Formulario de registro</h1>
-  <form class="grid grid-cols-2 gap-4 p-4 rounded-2xl shadow-md border-2" id="form" method="post" action="#" onsubmit="enviarInformacion(); return false">
+  <form class="grid grid-cols-2 gap-4 p-4 rounded-2xl shadow-md border-2" id="form" method="post" action="#" onsubmit="enviarInformacion(this.id); return false">
     <label class="flex flex-col p-2 bg-white border-2 border-gray-700 rounded-2xl" for="name">
       Ingrese su nombre
       <!-- 
@@ -30,17 +30,17 @@
     </label>
     <label class="flex flex-col p-2 bg-white border-2 border-gray-700 rounded-2xl" for="email">
       Ingrese su email
-      <input placeholder="Ingrese su email" class="border-b-2 border-gray-700" type="email" name="email" id="email" required pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$">
+      <input placeholder="Ingrese su email" class="border-b-2 border-gray-700" type="email" name="email" id="email" required>
       <span id="messageEmail" class="text-red-600"></span>
     </label>
     <label class="flex flex-col p-2 bg-white border-2 border-gray-700 rounded-2xl" for="phone">
       Ingrese su telefono
-      <input placeholder="Ingrese su telefono" class="border-b-2 border-gray-700" type="tel" name="phone" id="phone" required pattern="^[0-9]{10}$">
+      <input placeholder="Ingrese su telefono" class="border-b-2 border-gray-700" type="tel" name="phone" id="phone" title="El telefono debe ser de 12 digitos y comenzar con un '+'" required pattern="^\+\d{12}$">
       <span id="messagePhone" class="text-red-600"></span>
     </label>
     <label class="flex flex-col p-2 bg-white border-2 border-gray-700 rounded-2xl" for="password">
       Ingrese su contraseña
-      <input placeholder="Ingrese su contraseña" class="border-b-2 border-gray-700" type="password" name="password" id="password" required pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$">
+      <input placeholder="Ingrese su contraseña" class="border-b-2 border-gray-700" type="password" name="password" id="password" title="La contraseña debe tener al menos 8 caracteres, una mayuscula, una minuscula y un numero" required pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$">
       <span id="messagePassword" class="text-red-600"></span>
     </label>
     <label class="flex flex-col p-2 bg-white border-2 border-gray-700 rounded-2xl" for="confirmpassword">
@@ -48,12 +48,16 @@
       <input placeholder="Confirme su contraseña" class="border-b-2 border-gray-700" type="password" name="confirmpassword" id="confirmpassword" required pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$">
       <span id="messageConfirmPassword" class="text-red-600"></span>
     </label>
+    
     <input class="bg-green-600 p-2 rounded-2xl text-white col-span-2 cursor-pointer" type="submit" value="Enviar Formulario">
-  </form>
+    <div id="messages">
+    </div>
+    </form>
 
   <!-- Llamar varios archivos JS -->
-  <script src="./constants.js"></script>
+  <!-- <script src="./constants.js"></script>
   <script src="./regex.js"></script>
-  <script src="./console.js"></script>
+  <script src="./console.js"></script> -->
+  <script src="./formularioPOO.js"></script>
 </body>
 </html>

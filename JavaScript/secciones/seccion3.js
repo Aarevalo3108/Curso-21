@@ -56,7 +56,7 @@ console.log("Lista 2: ", lista2);
 // Arrow functions -> Otra forma de declarar funciones
 
 // Tradicional
-function sumarTradicional(a, b){
+function sumarTradicional(a =10, b =23){
   return a + b;
 }
 

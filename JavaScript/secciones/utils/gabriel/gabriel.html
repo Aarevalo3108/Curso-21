@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+        .input-container {
+            display: flex;
+            align-items: center;
+        }
+        .input-container button {
+            margin-left: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Formulario de Registro</h2>
+    <form id="formulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required>
+        <div id="nombreError" class="error"></div>
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" required>
+        <div id="apellidoError" class="error"></div>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <div id="emailError" class="error"></div>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" required>
+        <div id="telefonoError" class="error"></div>
+
+        <label for="contraseña">Contraseña:</label>
+        <div class="input-container">
+            <input type="password" id="contraseña" required>
+            <button type="button" id="Contraseña2">👁️</button>
+        </div>
+        <div id="contraseñaError" class="error"></div>
+
+        <label for="confirmarContraseña">Confirmar Contraseña:</label>
+        <div class="input-container">
+            <input type="password" id="confirmarContraseña" required>
+            <button type="button" id="ConfirmarContraseña2">👁️</button>
+        </div>
+        <div id="confirmarContraseñaError" class="error"></div>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script src="./gabriel.js"></script>
+</body>
+</html>

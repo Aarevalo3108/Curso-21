@@ -1,48 +1,99 @@
-const regex = {
-  name: /^[a-zA-Z\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-  enamil: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-  phone: /^\+\d{12}$/,
-  password: /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/,
-  age: /^\d{1,3}$/
+//  Programacion Orientada a objetos
+// Consiste en crear objetos que representen entidades o conceptos del mundo real.
+// Estos objetos tienen propiedades y metodos que permiten realizar acciones sobre ellos.
+
+// POO: Clases, Objetos, Metodos
+// Lo principal son las clases, 
+// que son plantillas para crear objetos.
+// Los objetos son instancias de las clases.
+// Los metodos son funciones que se ejecutan en los objetos.
+
+// De forma tradicional: creacion de objetos
+
+const Persona1 = {
+  nombre: "Juan",
+  apellido: "Perez",
+  edad: 25
+};
+
+console.log(Persona1.nombre);
+
+const Persona2 = {
+  nombre: "Maria",
+  apellido: "Salome",
+  edad: 25
+};
+
+console.log(Persona2.nombre);
+
+const Persona3 = {
+  nombre: "Manuel",
+  apellido: "Hernandez",
+  edad: 25
+};
+
+Persona3.direccion = {
+  calle: "calle 1",
+  numero: 1,
+  barrio: "Barrio 1"
+};
+
+console.log(Persona3.direccion.barrio);
+// Hecho con clases
+
+class Persona {
+  // La funcion constructor se ejecuta cuando se crea un objeto 
+  // y es equivalente a los parametros de una funcion
+  constructor(nombre, apellido, edad) {
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.edad = edad;
+    this.estadoCivil = "Soltero";
+  }
+
+  saludar(){
+    console.log(`Te saluda ${this.nombre}.`);
+  }
+
+  despedirse(){
+    console.log(`Adios de parte de ${this.nombre}.`);
+  }
 }
 
-class Formulario{
-  constructor(name, lastname, email,phone, password, age){
-    this.name = name;
-    this.lastname = lastname;
-    this.email = email;
-    this.phone = phone;
-    this.password = password;
-    this.age = age ?? 0;
-  }
-  validar(){
-    const result = {};
-    if(!regex.name.test(this.name)){
-      result.name = "El nombre no es valido";
-    }
-    if(!regex.enamil.test(this.email)){
-      result.email = "El correo no es valido";
-    }
-    if(!regex.phone.test(this.phone)){
-      result.phone = "El telefono no es valido";
-    }
-    if(!regex.password.test(this.password)){
-      result.password = "La contraseña no es valida";
-    }
-    if(!regex.age.test(this.age)){
-      result.age = "La edad no es valida";
-    }
-    return result
+// Uso de la clases
 
+const persona1 = new Persona("Juan", "Perez", 25);
+const persona2 = new Persona("Maria", "Salome", 25);
+const persona3 = new Persona("Manuel", "Hernandez", 25);
+
+persona1.saludar();
+persona1.despedirse();
+
+persona2.saludar();
+persona2.despedirse();
+
+persona3.saludar();
+persona3.despedirse();
+
+// Herencia: una clase puede heredar de otra
+class Admin extends Persona {
+  constructor(nombre, apellido, edad) {
+    super(nombre, apellido, edad);
+    this.rol = "Admin";
+  }
+
+  saludarConPrivilegios(){
+    console.log(`Te saluda ${this.rol} ${this.nombre}.`);
   }
 }
 
-const formulario = new Formulario("Gabriel", "Garcia", "gabriel@hola.com", "+123456781234", "21");
-console.log(formulario);
-console.log(formulario.validar());
+const admin1 = new Admin("Angel", "Arevalo", 25);
+admin1.saludar();
+admin1.despedirse();
+admin1.saludarConPrivilegios();
 
 
 // Get the size of an object
 const myObj = {id: 1, name: "John", age: 30};
 var size = Object.keys(myObj).length;
-console.log(size);
+// console.log(size);
