@@ -49,9 +49,12 @@ class Formulario {
   borrarMensajes(id) {
     const messages = document.getElementById(id);
     if (!messages) return;
-
-    while (messages.firstChild) {
-      messages.removeChild(messages.firstChild);
+    try{
+      while (messages.firstChild) {
+        messages.removeChild(messages.firstChild);
+      }
+    }catch{
+      console.log("No hay mensajes para borrar");
     }
   }
 }
@@ -112,3 +115,95 @@ pi = 5;
   Fecha de entrega: 10/03/2025
 
 */
+
+class Persona {
+  constructor(name, lastname, age) {
+    this.name = name;
+    this.lastname = lastname;
+    this.age = age;
+  }
+
+  saludar(){
+    console.log(`Te saluda ${this.name} ${this.lastname} y tengo ${this.age} años.`);
+  }
+
+  despedirse(){
+    console.log(`Adios de parte de ${this.name} ${this.lastname} y tengo ${this.age} años.`);
+  }
+}
+
+const persona = new Persona("Angel", "Arevalo", 25);
+// persona.saludar();
+// persona.despedirse();
+
+class Usuario extends Persona {
+  constructor(name, lastname, age, email, password) {
+    super(name, lastname, age);
+    this.email = email;
+    this.password = password;
+    this.rol = "Usuario";
+  }
+
+  iniciarSesion(){
+    console.log(` Rol: ${this.rol}. Iniciando sesion con el correo ${this.email} y la contraseña ${this.password}.`);
+  }
+
+  desloguearse(){
+    console.log(`Rol: ${this.rol}. Deslogueandose del correo ${this.email} y la contraseña ${this.password}.`);
+  }
+}
+
+const usuario = new Usuario("Angel", "Arevalo", 25, "aKZt8@example.com", "12345678");
+// usuario.saludar();
+// usuario.despedirse();
+// usuario.iniciarSesion();
+// usuario.desloguearse();
+
+class Administrador extends Usuario {
+  constructor(name, lastname, age, email, password, privileges) {
+    super(name, lastname, age, email, password);
+    this.rol = "Administrador";
+    this.privileges = privileges;
+  }
+
+  saludarConPrivilegios(){
+    console.log(`Te saluda ${this.rol} ${this.name}.`);
+  }
+
+  administrar(){
+    console.log(`Administrando ${this.privileges}.`);
+  }
+}
+
+const admin1 = new Administrador("Angel", "Arevalo", 25, "aKZt8@example.com", "12345678", "Bases de datos");
+// admin1.saludar();
+// admin1.despedirse();
+// admin1.iniciarSesion();
+// admin1.desloguearse();
+// admin1.saludarConPrivilegios();
+// admin1.administrar();
+
+class Profesor extends Usuario {
+  constructor(name, lastname, age, email, password, area) {
+    super(name, lastname, age, email, password);
+    this.rol = "Profesor";
+    this.area = area;
+  }
+
+  saludarConPrivilegios(){
+    console.log(`Te saluda ${this.rol} ${this.name}.`);
+  }
+
+  darClases(){
+    console.log(`Dando clases de ${this.area}.`);
+  }
+}
+
+const profesor1 = new Profesor("Angel", "Arevalo", 25, "aKZt8@example.com", "12345678", "Programacion");
+profesor1.saludar();
+profesor1.despedirse();
+profesor1.iniciarSesion();
+profesor1.desloguearse();
+profesor1.saludarConPrivilegios();
+profesor1.darClases();
+

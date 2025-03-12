@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <title>Document</title>
+</head>
+<body class="bg-blue-700 flex flex-col gap-4 items-center">
+  <h1 class="text-4xl">Calculadora</h1>
+  <div class="rounded-2xl bg-blue-400 p-4 flex gap-2 flex-col items-center">
+    <input class="p-2 rounded-2xl bg-white text-center" type="text" id="campo">
+    <p class="text-sm ">Resultado: <span id="resultado"></span></p>
+    <button class="p-2 rounded-2xl bg-slate-600 hover:scale-110 transition" id="calcular">
+      Calcular
+    </button>
+  </div>
+  <script src="./calculadoraPOO.js"></script>
+</body>
+</html>
