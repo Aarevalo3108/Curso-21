@@ -158,32 +158,93 @@ console.log(obtenerInformacion());
 
 // Consumo de APIs
 
-const url = "https://rickandmortyapi.com/api/character?page=10";
+/*
 
-async function obtenerPersonajes() {
+const informacion = {
+    "info": {
+        "count": 826,
+        "pages": 42,
+        "next": "https://rickandmortyapi.com/api/character?page=11",
+        "prev": "https://rickandmortyapi.com/api/character?page=9"
+    },
+    "results": [
+        {
+            "id": 181,
+            "name": "Jessica's Friend",
+            "status": "Alive",
+            "species": "Human",
+            "type": "",
+            "gender": "Female",
+            "origin": {
+                "name": "Earth (C-137)",
+                "url": "https://rickandmortyapi.com/api/location/1"
+            },
+            "location": {
+                "name": "Earth (Replacement Dimension)",
+                "url": "https://rickandmortyapi.com/api/location/20"
+            },
+            "image": "https://rickandmortyapi.com/api/character/avatar/181.jpeg",
+            "episode": [
+                "https://rickandmortyapi.com/api/episode/1",
+                "https://rickandmortyapi.com/api/episode/4",
+                "https://rickandmortyapi.com/api/episode/6",
+                "https://rickandmortyapi.com/api/episode/11",
+                "https://rickandmortyapi.com/api/episode/17",
+                "https://rickandmortyapi.com/api/episode/18",
+                "https://rickandmortyapi.com/api/episode/25",
+                "https://rickandmortyapi.com/api/episode/27"
+            ],
+            "url": "https://rickandmortyapi.com/api/character/181",
+            "created": "2017-12-29T18:47:23.345Z"
+        },
+        ...
+    ]
+}
+
+informacion.results[4].name
+
+*/
+
+// Ejercicio 
+
+/*
+
+Una empresa desea realizar una Landing Page para visualizar todos los personas de la serie
+Rick and Morty, esta empresa posee una API con esa informacion, la cual el endpoint es:
+
+url = "https://rickandmortyapi.com/api";
+
+Para consultar los personas tenemos este otro endpoint: 
+
+url = "https://rickandmortyapi.com/api/character";
+
+Esa landing page necesita mostrar todos los personajes de la serie, de 20 en 20
+Debe tener botones de siguiente y anterior, asi como tambien una paginacion donde se vea
+el numero de paginas, la pagina actual y el total de paginas.
+
+Esa pagina necesita tambien un buscador de personajes poor nombre, dicho buscador cada vez que se coloque una letra
+debe actualizar la lista de personajes de la pagina actual.
+
+cada personaje tiene un nombre, un estatus 
+
+
+
+*/
+
+async function obtenerPersonajes(url = "https://rickandmortyapi.com/api/character?page=1") {
   try {
     const response = await fetch(url);
     // console.log(response);
     const data = await response.json();
     // console.log(data.results);
-    const containerPersonajes = document.getElementById("personajes");
-    data.results.map((personaje) => {
-      const personajeContainer = document.createElement("div");
-      personajeContainer.classList.add("p-2", "bg-slate-600", "text-white", "flex", "flex-col", "gap-2");
-      personajeContainer.innerHTML = 
-      `
-        <img src="${personaje.image}" alt="${personaje.name}">
-        <p>${personaje.name}</p>
-        <p>${personaje.status}</p>
-      `;
-      containerPersonajes.appendChild(personajeContainer);
-    })
+    console.log(data);
+    return data
   } catch (error) {
     console.error(error);
   }
 }
-const boton = document.getElementById("boton");
-boton.addEventListener("click", obtenerPersonajes);
+
+obtenerPersonajes();
 
 
 

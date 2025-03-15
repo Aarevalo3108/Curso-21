@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <title>Personajes</title>
+</head>
+<body class="flex flex-col items-center gap-4 p-4">
+  <h1 class="text-2xl">Seccion 4</h1>
+  <div class="grid grid-cols-3 gap-4">
+    <p class="col-span-3 paginacion"></p>
+    <button class="anterior px-2 py-1 rounded-2xl bg-slate-600 border-2">Anterior</button>
+    <p> << 2 3 4 <span class="bg-slate-600">5</span> 6 7 8 >></p>
+    <button class="siguiente px-2 py-1 rounded-2xl bg-slate-600 border-2">Siguientes</button>
+  </div>
+  <div id="personajes" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 p-2 items-center justify-center content-center rounded-2xl">
+    
+  </div>
+  <div class="grid grid-cols-3 gap-4">
+    <p class="col-span-3 paginacion"></p>
+    <button class="anterior px-2 py-1 rounded-2xl bg-slate-600 border-2">Anterior</button>
+    <p><< 2 3 4 <span class="bg-slate-600">5</span> 6 7 8 >></p>
+    <button class="siguiente px-2 py-1 rounded-2xl bg-slate-600 border-2">Siguientes</button>
+  </div>
+  <script src="./character.js"></script>
+</body>
+</html>
