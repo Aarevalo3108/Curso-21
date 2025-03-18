@@ -247,6 +247,59 @@ async function obtenerPersonajes(url = "https://rickandmortyapi.com/api/characte
 obtenerPersonajes();
 
 
+/* LocalStorage */
+// Guardar informacion en el navegador del usuario, se puede guardar informacion en formato texto
+// Persisten en el navegador del usuario
+
+// localStorage.setItem("clave", "valor");
+// localStorage.getItem("clave");
+// localStorage.removeItem("clave");
+// localStorage.clear();
+
+// Ejemplo
+
+const setLocal = (clave, valor) => localStorage.setItem(clave, valor);
+const getLocal = (clave) => localStorage.getItem(clave);
+
+setLocal("carrito", "[1, 2, 3]");
+console.log(getLocal("carrito"));
+
+
+/* SessionStorage */
+// Muy similar a localStorage pero no persiste en el navegador indefinidamente,
+// Se destruye cuando el navegador se cierra
+
+// sessionStorage.setItem("clave", "valor");
+// sessionStorage.getItem("clave");
+// sessionStorage.removeItem("clave");  
+// sessionStorage.clear();
+
+// Ejemplo
+
+const setSession = (clave, valor) => sessionStorage.setItem(clave, valor);
+const getSession = (clave) => sessionStorage.getItem(clave);
+
+setSession("carrito", "[1, 2, 3]");
+console.log(getSession("carrito"));
+
+/* Cookies */
+// Otra forma de guardar informacion en el navegador del usuario
+// Principalmente utilizadas para identificar al usuario
+// Se guardan en formato:
+// document.cookie("nombre=valor; expires=fecha; path=directorio");
+
+//Ejemplo de una cookie que se elimina en 1 día
+let fechaActual = new Date();
+let fechaExpiracion = new Date(fechaActual.getTime() + 24 * 60 * 60 * 1000);
+document.cookie = `name=Hola; expires=${fechaExpiracion.toUTCString()}; path=/`;
+
+console.log(document.cookie);
+
+
+
+
+
+
 
 
 
