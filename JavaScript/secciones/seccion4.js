@@ -246,7 +246,7 @@ async function obtenerPersonajes(url = "https://rickandmortyapi.com/api/characte
 
 obtenerPersonajes();
 
-
+  
 /* LocalStorage */
 // Guardar informacion en el navegador del usuario, se puede guardar informacion en formato texto
 // Persisten en el navegador del usuario
@@ -290,7 +290,7 @@ console.log(getSession("carrito"));
 
 //Ejemplo de una cookie que se elimina en 1 día
 let fechaActual = new Date();
-let fechaExpiracion = new Date(fechaActual.getTime() + 24 * 60 * 60 * 1000);
+let fechaExpiracion = new Date(fechaActual.getTime() + 4 * 24 * 60 * 60 * 1000);
 document.cookie = `name=Hola; expires=${fechaExpiracion.toUTCString()}; path=/`;
 
 console.log(document.cookie);

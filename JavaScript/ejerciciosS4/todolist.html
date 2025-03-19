@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <title>To Do List</title>
+</head>
+<body class="flex flex-col items-center gap-4 ">
+  <h1 class="text-4xl p-4">To Do List</h1>
+  <input class="p-2 rounded-2xl text-center w-64 border-2 bg-amber-100" type="text" id="taskInput" placeholder="Nueva tarea...">
+  <button class="px-4 py-2 border-2 cursor-pointer rounded-2xl bg-slate-600 hover:scale-110 transition" onclick="addTask()">Añadir</button>
+  <ul id="taskList"></ul>
+  <script src="./todolist.js"></script>
+</body>
+</html>
