@@ -1,19 +1,45 @@
 const addTask = () => {
   const input = document.getElementById('taskInput');
   console.log(input.value);
+  // Mas de un input en el caso de un formulario
+  // Ejemplo:
+  // const nombre = document.getElementById('name');
+  // const apellido = document.getElementById('lastname');
+  // const email = document.getElementById('email');
+  // const password = document.getElementById('password');
+
+
+  // Aca va la validacion con una expresion regular
+
+  // Validacion sencilla para saber si el input esta vacio
+  if (input.value === '') {
+    return;
+  }
 
   const taskList = document.getElementById('taskList');
   const li = document.createElement('li');
-  li.textContent = input.value;
-
+  
   const tarea = {
     id: Date.now(),
     title: input.value
+    // Mas propiedades en el caso de un formulario
+    // Ejemplo:
+    // name: nombre.value,
+    // lastname: apellido.value
+    // email: email.value
+    // password: password.value
+    // Tokens: []
   }
-
+  
+  li.innerHTML = 
+  `
+    <span>${tarea.title}</span>
+    <button class="eliminar" onclick="deleteTask(${tarea.id})">X</button>
+  `;
+  // let usuario = [];
   let tareas = [];
 
-  if (sessionStorage.getItem('tareas')) {
+  if (sessionStorage.getItem('tareas')) { // <- item "usuarios"
     // tareas = JSON.parse(localStorage.getItem('tareas'));
     tareas = JSON.parse(sessionStorage.getItem('tareas'));
   }
@@ -21,6 +47,9 @@ const addTask = () => {
   tareas.push(tarea);
   // localStorage.setItem('tareas', JSON.stringify(tareas));
   sessionStorage.setItem('tareas', JSON.stringify(tareas));
+
+  // windows.location.href = "./login.html";
+  // windows.location.href = "./home.html";
 
   taskList.appendChild(li);
   input.value = '';

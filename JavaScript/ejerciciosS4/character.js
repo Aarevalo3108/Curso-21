@@ -22,9 +22,9 @@ cada personaje tiene una imagen, nombre, un estatus y una especie.
 
 const URL_API = "https://rickandmortyapi.com/api/character";
 
-async function obtenerPersonajes(url = URL_API) {
+async function obtenerPersonajes(url = URL_API, parametros = "") {
   try {
-    const response = await fetch(url);
+    const response = await fetch(url.includes("?") ? `${url}&${parametros}` : `${url}?${parametros}`);
     const data = await response.json();
     // const pokemon = await obtenerPokemon(data.results[0].url)
     return data;
@@ -54,24 +54,24 @@ const pintarPersonajes = (personajes) => {
   })
 }
 
-const pintarBotones = (info) => {
+const pintarBotones = (info, parametro) => {
   const anterior = document.getElementsByClassName("anterior");
   const siguiente = document.getElementsByClassName("siguiente");
   const paginacion = document.getElementsByClassName("paginacion");
   for (let i = 0; i < anterior.length; i++) {
     anterior[i].disabled = !info.prev;
     anterior[i].onclick = () => {
-      main(info.prev);
+      main(parametro, info.prev);
     }
     siguiente[i].disabled = !info.next;
     siguiente[i].onclick = () => {
-      main(info.next);
+      main(parametro, info.next);
     }
     paginacion[i].innerText = `Total de paginas: ${info.pages}`;
   }
 }
 
-const pintarPaginacion = (info) => {
+const pintarPaginacion = (info, parametro) => {
   // Logica para pintar los numeros que estan en medio de los botones, 
   // de modo tal, que si estoy en la pagina 1, se pinte
   // << 1 2 3 4 >>
@@ -88,11 +88,11 @@ const pintarPaginacion = (info) => {
   }
 
   primero.onclick = () => {
-    main(URL_API);
+    main(parametro, URL_API);
   }
   ultimo.onclick = () => {
-    console.log(`${URL_API}?page=${info.pages}`)
-    main(`${URL_API}?page=${info.pages}`);
+    // console.log(`${URL_API}?page=${info.pages}`)
+    main(parametro, `${URL_API}?page=${info.pages}`);
   }
   
   let paginaSiguiente = info.next;
@@ -119,20 +119,45 @@ const pintarPaginacion = (info) => {
     botonPagina.classList.add("bg-slate-600", "text-white", "p-2", "rounded-lg", "cursor-pointer");
     botonPagina.innerText = i-1;
     botonPagina.onclick = () => {
-      main(`${URL_API}?page=${i-1}`);
+      main(parametro, `${URL_API}?page=${i-1}`);
     }
-    botones.appendChild(botonPagina);
-    auxiliar = auxiliar + 1;
+    if(auxiliar == 0){
+      botones.appendChild(botonPagina);
+    } else{
+      botones.insertBefore(botonPagina, botones.firstChild);
+    }
+    botones.add
+    auxiliar++;
     if(auxiliar == 3){
       break;
     }
   }
+  // console.log("auxiliar: ",auxiliar);
+  // Invertimos los botones ultimo y primero
+  // if(auxiliar == 2){
+  //   const ultimoBoton = botones.lastChild;
+  //   const primeroBoton = botones.firstChild;
+  //   botones.removeChild(ultimoBoton);
+  //   botones.removeChild(primeroBoton);
+  //   botones.appendChild(ultimoBoton);
+  //   botones.appendChild(primeroBoton);
+  // } else if(auxiliar == 3){
+  //   const ultimoBoton = botones.lastChild;
+  //   const boton2 = botones.childNodes[1];
+  //   const primeroBoton = botones.firstChild;
+  //   botones.removeChild(ultimoBoton);
+  //   botones.removeChild(boton2);
+  //   botones.removeChild(primeroBoton);
+  //   botones.appendChild(ultimoBoton);
+  //   botones.appendChild(boton2);
+  //   botones.appendChild(primeroBoton);
+  // }
 
   const botonPaginaActual = document.createElement("button");
   botonPaginaActual.innerText = paginaActual;
   botonPaginaActual.classList.add("bg-slate-800", "text-white", "p-2", "rounded-lg", "cursor-pointer");
   botonPaginaActual.onclick = () => {
-    main(`${URL_API}?page=${paginaActual}`);
+    main(parametro, `${URL_API}?page=${paginaActual}`);
   }
   botones.appendChild(botonPaginaActual);
 
@@ -142,7 +167,7 @@ const pintarPaginacion = (info) => {
     botonPagina.classList.add("bg-slate-600", "text-white", "p-2", "rounded-lg", "cursor-pointer");
     botonPagina.innerText = i+1;
     botonPagina.onclick = () => {
-      main(`${URL_API}?page=${i+1}`);
+      main(parametro, `${URL_API}?page=${i+1}`);
     }
     botones.appendChild(botonPagina);
     auxiliar = auxiliar + 1;
@@ -152,14 +177,15 @@ const pintarPaginacion = (info) => {
   }
 
 
-  console.log(paginaAnterior, paginaSiguiente);
+  // console.log(paginaAnterior, paginaSiguiente);
 }
 
-const main = async (url = URL_API) => {
-  const informacion = await obtenerPersonajes(url);
-  pintarBotones(informacion.info);
-  pintarPaginacion(informacion.info);
-  pintarPersonajes(informacion.results);
+const main = async (parametros = "",url = URL_API) => {
+  console.log(url);
+  const informacion = await obtenerPersonajes(url, parametros);
+  pintarBotones(informacion.info, parametros);
+  pintarPaginacion(informacion.info, parametros);
+  pintarPersonajes(informacion.results, parametros);
   console.log(informacion);
 }
 
@@ -178,7 +204,7 @@ let temporizador = 0;
 buscador.oninput = (e) => {
   clearTimeout(temporizador);
   temporizador = setTimeout(() => {
-    main(`${URL_API}?name=${e.target.value}`);
+    main(`name=${e.target.value}`);
   }, 500);
 }
 

@@ -36,3 +36,16 @@
  * Fecha de entrega 25/03/2025
 
 */
+
+
+//Obtener una cookie
+
+const cookie = document.cookie
+
+// Buscar la que sea "Sesion"
+
+const sesionCookie = cookie.split(";").find(cookie => cookie.includes("Sesion"))
+
+if(!sesionCookie){
+  console.log("No hay sesion");
+}
