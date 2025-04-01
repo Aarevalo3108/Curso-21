@@ -8,7 +8,6 @@ const addTask = () => {
   // const email = document.getElementById('email');
   // const password = document.getElementById('password');
 
-
   // Aca va la validacion con una expresion regular
 
   // Validacion sencilla para saber si el input esta vacio
