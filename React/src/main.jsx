@@ -1,26 +1,28 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
 import Nav from './components/Nav'
+import App from './components/App'
 
 // import './styles.css'
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <BrowserRouter>
     <Nav/>
-    <h1 className='bg-blue-600 text-2xl text-center p-4 rounded-2xl text-white'>Hola mundo</h1>
-    <main>
-      <h2>Seccion 1</h2>
-      <h2>Seccion 2</h2>
-      <h2>Seccion 3</h2>
-      <h2>Seccion 4</h2>
-    </main> 
-    <footer>
-      <h2>Footer</h2>
-      <ul>
-        <p>Copyright 2023</p>
-        <p>Terminos y condiciones</p>
-      </ul>
-    </footer>
+      <App />
+      <footer>
+        <h3>Todos los derechos reservados</h3>
+        <h3>Contacto</h3>
+        <ul>
+          <li>Facebook</li>
+          <li>Twitter</li>
+          <li>Instagram</li>
+          <li>Linkedin</li>
+          <li>Soporte</li>
+        </ul>
+      </footer>
+    </BrowserRouter>
   </StrictMode>
 )
